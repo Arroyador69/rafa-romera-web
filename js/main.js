@@ -190,10 +190,35 @@ document.addEventListener('DOMContentLoaded', function() {
 // Funcionalidad del Lightbox
 let currentImageIndex = 0;
 const images = [
-    'data/media/photos/photo_5.jpg',
+    'data/media/photos/photo_10.jpg',
     'data/media/photos/photo_6.jpg',
     'data/media/photos/photo_7.jpg',
-    'data/media/photos/photo_8.jpg'
+    'data/media/photos/photo_8.jpg',
+    'data/media/photos/photo_9.jpg',
+    'data/media/photos/DSC02250.jpg',
+    'data/media/photos/DSC02063.jpg',
+    'data/media/photos/DSC02065.jpg',
+    'data/media/photos/DSC02066.jpg',
+    'data/media/photos/DSC02098-Editar-2.jpg',
+    'data/media/photos/DSC02108-2.jpg',
+    'data/media/photos/DSC02123.jpg',
+    'data/media/photos/DSC02146.jpg',
+    'data/media/photos/DSC02148.jpg',
+    'data/media/photos/DSC02246.jpg',
+    'data/media/photos/DSC02271-2.jpg',
+    'data/media/photos/DSC02337.jpg',
+    'data/media/photos/DSC02369.jpg',
+    'data/media/photos/DSC02435.jpg',
+    'data/media/photos/DSC02437.jpg',
+    'data/media/photos/DSC02437-2.jpg',
+    'data/media/photos/DSC02438.jpg',
+    'data/media/photos/DSC02458.jpg',
+    'data/media/photos/IMG_5507.JPG',
+    'data/media/photos/IMG_5508.JPG',
+    'data/media/photos/PHOTO-2025-06-05-10-05-21.jpg',
+    'data/media/photos/PHOTO-2025-06-05-10-05-22.jpg',
+    'data/media/photos/PHOTO-2025-06-05-10-05-22 2.jpg',
+    'data/media/photos/PHOTO-2025-06-05-10-05-23.jpg'
 ];
 
 function openLightbox(index) {
