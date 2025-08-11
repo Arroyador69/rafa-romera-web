@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Previa de la Galería - Rafa Romera</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff4d4d;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #333;
+            border: 1px solid #555;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .image-info {
+            padding: 15px;
+            text-align: center;
+        }
+        .image-info h3 {
+            margin: 0 0 10px 0;
+            color: #ff4d4d;
+        }
+        .image-info p {
+            margin: 0;
+            font-size: 14px;
+            color: #ccc;
+        }
+        .status {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .status h2 {
+            color: #ff4d4d;
+            margin-top: 0;
+        }
+        .missing {
+            color: #ff6b6b;
+        }
+        .present {
+            color: #51cf66;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vista Previa de la Galería - Rafa Romera</h1>
+        
+        <div class="status">
+            <h2>Estado de las Imágenes</h2>
+            <p><strong>Imágenes presentes:</strong> <span class="present">10 de 22</span></p>
+            <p><strong>Imágenes faltantes:</strong> <span class="missing">12 imágenes</span></p>
+            <p><strong>Progreso:</strong> 45% completado</p>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Imágenes presentes -->
+            <div class="gallery-item">
+                <img src="data/media/photos/photo_1.jpg" alt="Rafa Romera - Retrato casual con camisa azul">
+                <div class="image-info">
+                    <h3>photo_1.jpg</h3>
+                    <p>✅ Presente</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="data/media/photos/photo_2.jpg" alt="Rafa Romera - Retrato en estudio con fondo gris">
+                <div class="image-info">
+                    <h3>photo_2.jpg</h3>
+                    <p>✅ Presente</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="data/media/photos/photo_3.jpg" alt="Rafa Romera - Sonriendo con camisa a rayas">
+                <div class="image-info">
+                    <h3>photo_3.jpg</h3>
+                    <p>✅ Presente</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="data/media/photos/photo_4.jpg" alt="Rafa Romera - Con chaqueta de cuero y puerta de madera">
+                <div class="image-info">
+                    <h3>photo_4.jpg</h3>
+                    <p>✅ Presente</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="data/media/photos/photo_5.jpg" alt="Rafa Romera - Con guitarra clásica sentado">
+                <div class="image-info">
+                    <h3>photo_5.jpg</h3>
+                    <p>✅ Presente</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="data/media/photos/photo_6.jpg" alt="Rafa Romera - Retrato pensativo con guitarra">
+                <div class="image-info">
+                    <h3>photo_6.jpg</h3>
+                    <p>✅ Presente</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="data/media/photos/photo_7.jpg" alt="Rafa Romera - En habitación minimalista con cama">
+                <div class="image-info">
+                    <h3>photo_7.jpg</h3>
+                    <p>✅ Presente</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="data/media/photos/photo_8.jpg" alt="Rafa Romera - De pie junto a la cama">
+                <div class="image-info">
+                    <h3>photo_8.jpg</h3>
+                    <p>✅ Presente</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="data/media/photos/photo_9.jpg" alt="Rafa Romera - Sentado en la cama">
+                <div class="image-info">
+                    <h3>photo_9.jpg</h3>
+                    <p>✅ Presente</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="data/media/photos/photo_10.jpg" alt="Rafa Romera - Retrato en silla amarilla">
+                <div class="image-info">
+                    <h3>photo_10.jpg</h3>
+                    <p>✅ Presente</p>
+                </div>
+            </div>
+            
+            <!-- Imágenes faltantes -->
+            <div class="gallery-item">
+                <div style="height: 300px; background: linear-gradient(45deg, #333, #555); display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #ff6b6b; margin: 0;">photo_11.jpg</h3>
+                        <p style="color: #ccc;">❌ Faltante</p>
+                        <p style="font-size: 12px; color: #888;">Con camisa de rugby y jeans</p>
+                    </div>
+                </div>
+                <div class="image-info">
+                    <h3>photo_11.jpg</h3>
+                    <p>❌ Faltante</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="height: 300px; background: linear-gradient(45deg, #333, #555); display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #ff6b6b; margin: 0;">photo_12.jpg</h3>
+                        <p style="color: #ccc;">❌ Faltante</p>
+                        <p style="font-size: 12px; color: #888;">Con chaqueta denim y gorra</p>
+                    </div>
+                </div>
+                <div class="image-info">
+                    <h3>photo_12.jpg</h3>
+                    <p>❌ Faltante</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="height: 300px; background: linear-gradient(45deg, #333, #555); display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #ff6b6b; margin: 0;">photo_13.jpg</h3>
+                        <p style="color: #ccc;">❌ Faltante</p>
+                        <p style="font-size: 12px; color: #888;">Retrato en estudio con sombras dramáticas</p>
+                    </div>
+                </div>
+                <div class="image-info">
+                    <h3>photo_13.jpg</h3>
+                    <p>❌ Faltante</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="height: 300px; background: linear-gradient(45deg, #333, #555); display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #ff6b6b; margin: 0;">photo_14.jpg</h3>
+                        <p style="color: #ccc;">❌ Faltante</p>
+                        <p style="font-size: 12px; color: #888;">Con chaqueta de cuero en blanco y negro</p>
+                    </div>
+                </div>
+                <div class="image-info">
+                    <h3>photo_14.jpg</h3>
+                    <p>❌ Faltante</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="height: 300px; background: linear-gradient(45deg, #333, #555); display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #ff6b6b; margin: 0;">photo_15.jpg</h3>
+                        <p style="color: #ccc;">❌ Faltante</p>
+                        <p style="font-size: 12px; color: #888;">Sonriendo con chaqueta de cuero</p>
+                    </div>
+                </div>
+                <div class="image-info">
+                    <h3>photo_15.jpg</h3>
+                    <p>❌ Faltante</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="height: 300px; background: linear-gradient(45deg, #333, #555); display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #ff6b6b; margin: 0;">photo_16.jpg</h3>
+                        <p style="color: #ccc;">❌ Faltante</p>
+                        <p style="font-size: 12px; color: #888;">Retrato con tatuaje en el brazo</p>
+                    </div>
+                </div>
+                <div class="image-info">
+                    <h3>photo_16.jpg</h3>
+                    <p>❌ Faltante</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="height: 300px; background: linear-gradient(45deg, #333, #555); display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #ff6b6b; margin: 0;">photo_17.jpg</h3>
+                        <p style="color: #ccc;">❌ Faltante</p>
+                        <p style="font-size: 12px; color: #888;">Con suéter beige y logo BH</p>
+                    </div>
+                </div>
+                <div class="image-info">
+                    <h3>photo_17.jpg</h3>
+                    <p>❌ Faltante</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="height: 300px; background: linear-gradient(45deg, #333, #555); display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #ff6b6b; margin: 0;">photo_18.jpg</h3>
+                        <p style="color: #ccc;">❌ Faltante</p>
+                        <p style="font-size: 12px; color: #888;">Con chaqueta de cuero en calle urbana</p>
+                    </div>
+                </div>
+                <div class="image-info">
+                    <h3>photo_18.jpg</h3>
+                    <p>❌ Faltante</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="height: 300px; background: linear-gradient(45deg, #333, #555); display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #ff6b6b; margin: 0;">photo_19.jpg</h3>
+                        <p style="color: #ccc;">❌ Faltante</p>
+                        <p style="font-size: 12px; color: #888;">Con cardigan Lacoste y flores</p>
+                    </div>
+                </div>
+                <div class="image-info">
+                    <h3>photo_19.jpg</h3>
+                    <p>❌ Faltante</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="height: 300px; background: linear-gradient(45deg, #333, #555); display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #ff6b6b; margin: 0;">photo_20.jpg</h3>
+                        <p style="color: #ccc;">❌ Faltante</p>
+                        <p style="font-size: 12px; color: #888;">Retrato con tatuajes</p>
+                    </div>
+                </div>
+                <div class="image-info">
+                    <h3>photo_20.jpg</h3>
+                    <p>❌ Faltante</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="height: 300px; background: linear-gradient(45deg, #333, #555); display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #ff6b6b; margin: 0;">photo_21.jpg</h3>
+                        <p style="color: #ccc;">❌ Faltante</p>
+                        <p style="font-size: 12px; color: #888;">Retrato en silla amarilla pensativo</p>
+                    </div>
+                </div>
+                <div class="image-info">
+                    <h3>photo_21.jpg</h3>
+                    <p>❌ Faltante</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div style="height: 300px; background: linear-gradient(45deg, #333, #555); display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #ff6b6b; margin: 0;">photo_22.jpg</h3>
+                        <p style="color: #ccc;">❌ Faltante</p>
+                        <p style="font-size: 12px; color: #888;">Sonriendo con iluminación dramática</p>
+                    </div>
+                </div>
+                <div class="image-info">
+                    <h3>photo_22.jpg</h3>
+                    <p>❌ Faltante</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

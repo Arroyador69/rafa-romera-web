@@ -1,0 +1,134 @@
+{
+    "artist": {
+        "name": "Rafa Romera",
+        "spotify_id": "5L6WDyrviuO7HkNgMdDeCa",
+        "monthly_listeners": 55670,
+        "followers": 14773,
+        "description": "Rafa Romera es un artista nacido en Córdoba y criado en Málaga, su esencia es Andalucía pura. Lleva su tierra por bandera y así lo muestra en sus canciones dedicadas a su gente, a sus sitios y a sus amores. Tiene todo el amor para regalar al mundo, y se ha empeñado en conseguirlo."
+    },
+    "popular_songs": [
+        {
+            "title": "Díselo a la Vida",
+            "plays": 3299156,
+            "year": 2020,
+            "spotify_url": "https://open.spotify.com/track/0",
+            "album": "Díselo a la Vida"
+        },
+        {
+            "title": "Queremos Bailar",
+            "plays": 1903496,
+            "year": 2021,
+            "spotify_url": "https://open.spotify.com/track/0",
+            "album": "Queremos Bailar"
+        },
+        {
+            "title": "Mala Costumbre",
+            "plays": 474353,
+            "year": 2023,
+            "spotify_url": "https://open.spotify.com/track/0",
+            "album": "Mala Costumbre"
+        },
+        {
+            "title": "Color Esperanza",
+            "plays": 110770,
+            "year": 2020,
+            "spotify_url": "https://open.spotify.com/track/0",
+            "album": "OT Gala 6 (Operación Triunfo 2020)"
+        },
+        {
+            "title": "Alegría",
+            "plays": 52753,
+            "year": 2025,
+            "spotify_url": "https://open.spotify.com/track/0",
+            "album": "Alegría"
+        }
+    ],
+    "albums": [
+        {
+            "title": "Alegría",
+            "year": 2025,
+            "type": "Album",
+            "spotify_url": "https://open.spotify.com/album/0"
+        },
+        {
+            "title": "Queremos Bailar",
+            "year": 2021,
+            "type": "Album",
+            "spotify_url": "https://open.spotify.com/album/0"
+        },
+        {
+            "title": "Mala Costumbre",
+            "year": 2023,
+            "type": "Album",
+            "spotify_url": "https://open.spotify.com/album/0"
+        },
+        {
+            "title": "Pepito Grillo",
+            "year": 2024,
+            "type": "Album",
+            "spotify_url": "https://open.spotify.com/album/0"
+        },
+        {
+            "title": "Díselo a la Vida",
+            "year": 2020,
+            "type": "Album",
+            "spotify_url": "https://open.spotify.com/album/0"
+        },
+        {
+            "title": "En el Aire",
+            "year": 2023,
+            "type": "Album",
+            "spotify_url": "https://open.spotify.com/album/0"
+        }
+    ],
+    "singles": [
+        {
+            "title": "Alegría",
+            "year": 2025,
+            "type": "Single",
+            "spotify_url": "https://open.spotify.com/track/0"
+        },
+        {
+            "title": "Me Lleve a la Luna (Remix)",
+            "year": 2025,
+            "type": "Single",
+            "spotify_url": "https://open.spotify.com/track/0"
+        },
+        {
+            "title": "Me Lleve a la Luna",
+            "year": 2025,
+            "type": "EP",
+            "spotify_url": "https://open.spotify.com/track/0"
+        },
+        {
+            "title": "No Me Olvido",
+            "year": 2025,
+            "type": "Single",
+            "spotify_url": "https://open.spotify.com/track/0"
+        },
+        {
+            "title": "Sigo Sin Dormir",
+            "year": 2025,
+            "type": "Single",
+            "spotify_url": "https://open.spotify.com/track/0"
+        },
+        {
+            "title": "Tal Vez Fuimos",
+            "year": 2024,
+            "type": "Single",
+            "spotify_url": "https://open.spotify.com/track/0"
+        },
+        {
+            "title": "Pepito Grillo",
+            "year": 2024,
+            "type": "Single",
+            "spotify_url": "https://open.spotify.com/track/0"
+        },
+        {
+            "title": "Vuelvo al Pueblo",
+            "year": 2024,
+            "type": "Single",
+            "spotify_url": "https://open.spotify.com/track/0"
+        }
+    ]
+}
