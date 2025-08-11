@@ -190,15 +190,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // Funcionalidad del Lightbox
 let currentImageIndex = 0;
 const images = [
-    'data/media/photos/photo_2.jpg',
-    'data/media/photos/photo_3.jpg',
-    'data/media/photos/photo_4.jpg',
     'data/media/photos/photo_5.jpg',
     'data/media/photos/photo_6.jpg',
     'data/media/photos/photo_7.jpg',
-    'data/media/photos/photo_8.jpg',
-    'data/media/photos/photo_9.jpg',
-    'data/media/photos/photo_10.jpg'
+    'data/media/photos/photo_8.jpg'
 ];
 
 function openLightbox(index) {
