@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const songItem = document.createElement('div');
                     songItem.className = 'song-item';
                     songItem.innerHTML = `
+                        <img src="${song.image_url || 'data/media/photos/photo_10.jpg'}" alt="${song.title}" class="song-cover">
                         <div class="song-info">
                             <h4>${song.title}</h4>
                             <p>${song.plays.toLocaleString()} reproducciones</p>
@@ -75,9 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const albumItem = document.createElement('div');
                     albumItem.className = 'album-item';
                     albumItem.innerHTML = `
-                        <div class="album-cover">
-                            <i class="fas fa-music"></i>
-                        </div>
+                        <img src="${album.image_url || 'data/media/photos/photo_10.jpg'}" alt="${album.title}" class="album-cover">
                         <div class="album-info">
                             <h4>${album.title}</h4>
                             <p>${album.type} • ${album.year}</p>
