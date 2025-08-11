@@ -86,7 +86,10 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../data/media/photos/hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,16 +149,20 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
+    font-weight: 700;
     margin-bottom: 20px;
     color: var(--text-color);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 15px;
     color: var(--text-color);
-    font-weight: 400;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-description {
@@ -232,11 +239,13 @@ body {
 }
 
 .btn {
-    padding: 12px 30px;
+    padding: 15px 35px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary {
@@ -886,6 +895,10 @@ h2 {
 
     .hero-content h1 {
         font-size: 3rem;
+    }
+    
+    .hero {
+        background-attachment: scroll;
     }
 
     /* Estilos responsivos para la sección de música */
