@@ -94,8 +94,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 songs.forEach(song => {
                     const songItem = document.createElement('div');
                     songItem.className = 'song-item';
+                    
+                    // Debug: Log de la URL de la imagen
+                    console.log('Cargando imagen para:', song.title, 'URL:', song.image_url);
+                    
                     songItem.innerHTML = `
-                        <img src="${song.image_url || 'data/media/photos/photo_10.jpg'}" alt="${song.title}">
+                        <img src="${song.image_url || 'data/media/photos/photo_10.jpg'}" alt="${song.title}" onload="console.log('Imagen cargada:', '${song.title}')" onerror="console.error('Error cargando imagen:', '${song.title}', '${song.image_url}')">
                         <div class="song-info">
                             <h4>${song.title}</h4>
                             <p>${song.plays ? song.plays.toLocaleString() + ' reproducciones' : 'Single'}</p>
