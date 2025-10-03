@@ -1,1 +1,38 @@
-[]
+[
+    {
+        "id": 1,
+        "title": "Concierto en Málaga",
+        "date": "2024-12-15",
+        "time": "21:00",
+        "venue": "Teatro Cervantes",
+        "location": "Málaga, España",
+        "description": "Rafa Romera presenta su nuevo repertorio en el emblemático Teatro Cervantes de Málaga. Una noche llena de música andaluza y emociones.",
+        "image": "data/media/events/evento_1.jpg",
+        "ticket_url": "https://www.instagram.com/p/DOjJbPJjPUH/?hl=es",
+        "status": "upcoming"
+    },
+    {
+        "id": 2,
+        "title": "Festival de Música Andaluza",
+        "date": "2024-12-22",
+        "time": "20:30",
+        "venue": "Plaza de Toros",
+        "location": "Córdoba, España",
+        "description": "Participación especial en el Festival de Música Andaluza. Rafa Romera compartirá escenario con otros grandes artistas de la región.",
+        "image": "data/media/events/evento_2.jpg",
+        "ticket_url": "https://www.instagram.com/p/DO5nx9MjAfD/?hl=es",
+        "status": "upcoming"
+    },
+    {
+        "id": 3,
+        "title": "Noche Flamenca",
+        "date": "2025-01-10",
+        "time": "22:00",
+        "venue": "Tablao Flamenco",
+        "location": "Sevilla, España",
+        "description": "Una noche íntima de flamenco y música tradicional andaluza en uno de los tablaos más emblemáticos de Sevilla.",
+        "image": "data/media/events/evento_3.jpg",
+        "ticket_url": "https://www.instagram.com/p/DOYc5__jBGZ/?hl=es",
+        "status": "upcoming"
+    }
+]

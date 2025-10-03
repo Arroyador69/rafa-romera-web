@@ -245,6 +245,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializar menú hamburguesa
     initMobileMenu();
+    
+    // Cargar eventos
+    loadEvents();
 });
 
 // Función para manejar el menú móvil
@@ -517,5 +520,68 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
+
+// Función para cargar eventos
+async function loadEvents() {
+    try {
+        const response = await fetch('data/events/upcoming_events.json');
+        const events = await response.json();
+        
+        const eventsGrid = document.getElementById('eventsGrid');
+        if (!eventsGrid) return;
+        
+        eventsGrid.innerHTML = '';
+        
+        events.forEach(event => {
+            const eventElement = createEventElement(event);
+            eventsGrid.appendChild(eventElement);
+        });
+        
+    } catch (error) {
+        console.error('Error cargando eventos:', error);
+        const eventsGrid = document.getElementById('eventsGrid');
+        if (eventsGrid) {
+            eventsGrid.innerHTML = `
+                <div class="event-item">
+                    <div class="event-content">
+                        <h3>Próximamente</h3>
+                        <p>Mantente al tanto de los próximos conciertos y eventos</p>
+                    </div>
+                </div>
+            `;
+        }
+    }
+}
+
+// Función para crear elemento de evento
+function createEventElement(event) {
+    const eventDiv = document.createElement('div');
+    eventDiv.className = 'event-item';
+    
+    // Formatear fecha
+    const eventDate = new Date(event.date);
+    const formattedDate = eventDate.toLocaleDateString('es-ES', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    
+    eventDiv.innerHTML = `
+        <img src="${event.image}" alt="${event.title}" class="event-image" onerror="this.src='data/media/photos/hero-image.jpg'">
+        <div class="event-content">
+            <div class="event-date">${formattedDate} - ${event.time}</div>
+            <h3 class="event-title">${event.title}</h3>
+            <div class="event-venue">${event.venue}</div>
+            <div class="event-location">${event.location}</div>
+            <p class="event-description">${event.description}</p>
+            <a href="${event.ticket_url}" target="_blank" class="event-ticket-btn">
+                <i class="fas fa-ticket-alt"></i> Ver Cartel
+            </a>
+        </div>
+    `;
+    
+    return eventDiv;
+}
 
  

@@ -1083,6 +1083,99 @@ h2 {
     text-align: center;
 }
 
+/* Events Section */
+.events {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.event-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.event-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.event-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.event-content {
+    padding: 30px;
+}
+
+.event-date {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.event-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.event-venue {
+    color: #ffcc00;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.event-location {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.event-description {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.event-ticket-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--primary-color), #ff6b35);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+}
+
+.event-ticket-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+    color: white;
+}
+
 /* Contacto */
 .contact-content {
     display: grid;
@@ -1183,6 +1276,19 @@ h2 {
         z-index: 1001;
     }
 
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .event-item {
+        margin: 0 10px;
+    }
+    
+    .event-content {
+        padding: 20px;
+    }
+    
     .bio-content,
     .contact-content {
         grid-template-columns: 1fr;
