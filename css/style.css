@@ -88,7 +88,7 @@ body {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../data/media/photos/hero-image.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center 20%;
     background-attachment: fixed;
     display: flex;
     align-items: center;
@@ -97,6 +97,13 @@ body {
     padding: 0 20px;
     position: relative;
     overflow: hidden;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
+    image-rendering: smooth;
+    filter: contrast(1.15) brightness(1.08) saturate(1.12) blur(0.3px);
+    transform: scale(1.01);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .hero::before {
@@ -115,6 +122,8 @@ body {
     position: relative;
     z-index: 3;
     max-width: 600px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
 }
 
 .hero-image {
@@ -155,6 +164,7 @@ body {
     color: var(--text-color);
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     letter-spacing: 2px;
+    transition: opacity 0.3s ease;
 }
 
 .hero-subtitle {
@@ -163,6 +173,7 @@ body {
     color: var(--text-color);
     font-weight: 500;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    transition: opacity 0.3s ease;
 }
 
 .hero-description {
@@ -178,6 +189,8 @@ body {
     display: flex;
     gap: 20px;
     justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
 }
 
 
@@ -462,10 +475,112 @@ h2 {
     color: var(--text-color);
 }
 
-.albums-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+.songs-carousel {
+    overflow: hidden;
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 2rem 0;
+    margin: 2rem 0;
+}
+
+.songs-track {
+    display: flex;
+    animation: scrollSongs 30s linear infinite;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.songs-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollSongs {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.song-item {
+    flex: 0 0 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+
+.song-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(255, 77, 77, 0.2);
+    box-shadow: 0 20px 40px rgba(255, 77, 77, 0.3);
+}
+
+.song-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.song-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.song-info p {
+    color: #ccc;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.song-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.song-link:hover {
+    background: #ff3333;
+    transform: scale(1.05);
+}
+
+/* Video Container Full Width */
+.video-container-full {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+    margin: 2rem 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.video-container-full iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
 }
 
 .album-item {
@@ -952,5 +1067,18 @@ h2 {
 
     .floating-player-header span {
         font-size: 0.9rem;
+    }
+    
+    .video-container-full {
+        margin: 1rem 0;
+        border-radius: 15px;
+    }
+    
+    .songs-carousel {
+        padding: 1rem 0;
+    }
+    
+    .song-item {
+        flex: 0 0 180px;
     }
 } 

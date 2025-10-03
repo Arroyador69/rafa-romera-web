@@ -18,6 +18,43 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Efecto de scroll para los botones del hero
+window.addEventListener('scroll', function() {
+    const heroButtons = document.querySelector('.hero-buttons');
+    const heroContent = document.querySelector('.hero-content');
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    
+    if (heroButtons && heroContent) {
+        // Calcular el porcentaje de scroll en la sección hero
+        const scrollPercent = Math.min(scrollY / windowHeight, 1);
+        
+        // Mover los botones hacia arriba gradualmente (más pronunciado)
+        const moveUp = scrollPercent * 300; // Mover hasta 300px hacia arriba
+        heroButtons.style.transform = `translateY(-${moveUp}px)`;
+        
+        // Añadir opacidad gradual
+        const opacity = Math.max(1 - scrollPercent * 0.6, 0.1);
+        heroButtons.style.opacity = opacity;
+        
+        // Añadir efecto de escala sutil
+        const scale = Math.max(1 - scrollPercent * 0.15, 0.85);
+        heroButtons.style.transform += ` scale(${scale})`;
+        
+        // Mover el contenido del hero más hacia arriba
+        const contentMoveUp = scrollPercent * 100; // Mover hasta 100px hacia arriba
+        heroContent.style.transform = `translateY(-${contentMoveUp}px)`;
+        
+        // Añadir efecto parallax sutil al texto
+        const textOpacity = Math.max(1 - scrollPercent * 0.3, 0.7);
+        const title = heroContent.querySelector('h1');
+        const subtitle = heroContent.querySelector('p');
+        
+        if (title) title.style.opacity = textOpacity;
+        if (subtitle) subtitle.style.opacity = textOpacity;
+    }
+});
+
 // Formulario de contacto
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
@@ -46,25 +83,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
-            // Actualizar canciones populares
-            const songsGrid = document.querySelector('.songs-grid');
-            if (songsGrid && data.popular_songs) {
-                songsGrid.innerHTML = '';
-                data.popular_songs.forEach(song => {
+            // Actualizar carrusel de canciones en discografía
+            const songsTrack = document.querySelector('.songs-track');
+            if (songsTrack && data.popular_songs) {
+                songsTrack.innerHTML = '';
+                
+                // Duplicar las canciones para el efecto de carrusel infinito
+                const songs = [...data.popular_songs, ...data.popular_songs];
+                
+                songs.forEach(song => {
                     const songItem = document.createElement('div');
                     songItem.className = 'song-item';
                     songItem.innerHTML = `
-                        <img src="${song.image_url || 'data/media/photos/photo_10.jpg'}" alt="${song.title}" class="song-cover">
+                        <img src="${song.image_url || 'data/media/photos/photo_10.jpg'}" alt="${song.title}">
                         <div class="song-info">
                             <h4>${song.title}</h4>
-                            <p>${song.plays.toLocaleString()} reproducciones</p>
-                            <span class="song-year">${song.year}</span>
+                            <p>${song.plays ? song.plays.toLocaleString() + ' reproducciones' : 'Single'}</p>
+                            <span class="song-year">${song.year || '2025'}</span>
                         </div>
-                        <a href="https://open.spotify.com/intl-es/artist/5L6WDyrviuO7HkNgMdDeCa" target="_blank" class="spotify-link">
+                        <a href="https://open.spotify.com/intl-es/artist/5L6WDyrviuO7HkNgMdDeCa" target="_blank" class="song-link">
                             <i class="fab fa-spotify"></i> Escuchar
                         </a>
                     `;
-                    songsGrid.appendChild(songItem);
+                    songsTrack.appendChild(songItem);
                 });
             }
 
