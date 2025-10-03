@@ -523,22 +523,38 @@ document.addEventListener('keydown', function(e) {
 
 // Función para cargar eventos
 async function loadEvents() {
+    console.log('🎬 Iniciando carga de eventos...');
     try {
         const response = await fetch('data/events/upcoming_events.json');
+        console.log('📡 Respuesta del servidor:', response.status);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         const events = await response.json();
+        console.log('📅 Eventos cargados:', events);
         
         const eventsGrid = document.getElementById('eventsGrid');
-        if (!eventsGrid) return;
+        console.log('🎯 EventsGrid encontrado:', eventsGrid);
+        
+        if (!eventsGrid) {
+            console.error('❌ No se encontró el elemento eventsGrid');
+            return;
+        }
         
         eventsGrid.innerHTML = '';
         
-        events.forEach(event => {
+        events.forEach((event, index) => {
+            console.log(`🎪 Creando evento ${index + 1}:`, event.title);
             const eventElement = createEventElement(event);
             eventsGrid.appendChild(eventElement);
         });
         
+        console.log('✅ Eventos cargados exitosamente');
+        
     } catch (error) {
-        console.error('Error cargando eventos:', error);
+        console.error('❌ Error cargando eventos:', error);
         const eventsGrid = document.getElementById('eventsGrid');
         if (eventsGrid) {
             eventsGrid.innerHTML = `
@@ -546,6 +562,7 @@ async function loadEvents() {
                     <div class="event-content">
                         <h3>Próximamente</h3>
                         <p>Mantente al tanto de los próximos conciertos y eventos</p>
+                        <p style="color: #ff6b6b; font-size: 0.8rem;">Error: ${error.message}</p>
                     </div>
                 </div>
             `;
@@ -555,6 +572,7 @@ async function loadEvents() {
 
 // Función para crear elemento de evento
 function createEventElement(event) {
+    console.log('🎨 Creando elemento para evento:', event.title);
     const eventDiv = document.createElement('div');
     eventDiv.className = 'event-item';
     
@@ -567,8 +585,11 @@ function createEventElement(event) {
         day: 'numeric'
     });
     
+    console.log('📅 Fecha formateada:', formattedDate);
+    console.log('🖼️ Imagen del evento:', event.image);
+    
     eventDiv.innerHTML = `
-        <img src="${event.image}" alt="${event.title}" class="event-image" onerror="this.src='data/media/photos/hero-image.jpg'">
+        <img src="${event.image}" alt="${event.title}" class="event-image" onerror="console.error('Error cargando imagen:', this.src); this.src='data/media/photos/hero-image.jpg'">
         <div class="event-content">
             <div class="event-date">${formattedDate} - ${event.time}</div>
             <h3 class="event-title">${event.title}</h3>
@@ -581,6 +602,7 @@ function createEventElement(event) {
         </div>
     `;
     
+    console.log('✅ Elemento de evento creado');
     return eventDiv;
 }
 
