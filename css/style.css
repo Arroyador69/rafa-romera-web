@@ -294,22 +294,31 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    align-items: center;
+    align-items: start;
+    min-height: 400px;
+}
+
+.bio-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-top: 20px;
 }
 
 .bio-text p {
-    margin-bottom: 25px;
-    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-size: 1.4rem;
     color: var(--text-color);
     line-height: 1.8;
     text-align: justify;
 }
 
 .bio-text p:first-child {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 500;
     color: #ffcc00;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .bio-image img {
@@ -1117,6 +1126,20 @@ h2 {
     .bio-content,
     .contact-content {
         grid-template-columns: 1fr;
+        gap: 30px;
+        min-height: auto;
+    }
+    
+    .bio-text {
+        padding-top: 0;
+    }
+    
+    .bio-text p {
+        font-size: 1.2rem;
+    }
+    
+    .bio-text p:first-child {
+        font-size: 1.4rem;
     }
 
     .hero-content h1 {
