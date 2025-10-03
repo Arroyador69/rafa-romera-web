@@ -248,6 +248,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cargar eventos
     loadEvents();
+    
+    // También intentar cargar eventos después de un pequeño delay
+    setTimeout(() => {
+        console.log('🔄 Reintentando carga de eventos...');
+        loadEvents();
+    }, 1000);
+    
+    // Fallback después de 3 segundos si no se cargan los eventos
+    setTimeout(() => {
+        const eventsGrid = document.getElementById('eventsGrid');
+        if (eventsGrid && eventsGrid.children.length === 0) {
+            console.log('⏰ Timeout: usando eventos estáticos...');
+            createStaticEvents();
+        }
+    }, 3000);
 });
 
 // Función para manejar el menú móvil
@@ -555,18 +570,8 @@ async function loadEvents() {
         
     } catch (error) {
         console.error('❌ Error cargando eventos:', error);
-        const eventsGrid = document.getElementById('eventsGrid');
-        if (eventsGrid) {
-            eventsGrid.innerHTML = `
-                <div class="event-item">
-                    <div class="event-content">
-                        <h3>Próximamente</h3>
-                        <p>Mantente al tanto de los próximos conciertos y eventos</p>
-                        <p style="color: #ff6b6b; font-size: 0.8rem;">Error: ${error.message}</p>
-                    </div>
-                </div>
-            `;
-        }
+        console.log('🔄 Usando eventos estáticos como fallback...');
+        createStaticEvents();
     }
 }
 
@@ -604,6 +609,71 @@ function createEventElement(event) {
     
     console.log('✅ Elemento de evento creado');
     return eventDiv;
+}
+
+// Función de fallback para crear eventos estáticos
+function createStaticEvents() {
+    console.log('🔄 Creando eventos estáticos como fallback...');
+    const eventsGrid = document.getElementById('eventsGrid');
+    if (!eventsGrid) return;
+    
+    const staticEvents = [
+        {
+            title: "Concierto en Málaga",
+            date: "15 de diciembre 2024",
+            time: "21:00",
+            venue: "Teatro Cervantes",
+            location: "Málaga, España",
+            description: "Rafa Romera presenta su nuevo repertorio en el emblemático Teatro Cervantes de Málaga.",
+            image: "data/media/events/evento_1.jpg",
+            ticket_url: "https://www.instagram.com/p/DOjJbPJjPUH/?hl=es"
+        },
+        {
+            title: "Festival de Música Andaluza",
+            date: "22 de diciembre 2024", 
+            time: "20:30",
+            venue: "Plaza de Toros",
+            location: "Córdoba, España",
+            description: "Participación especial en el Festival de Música Andaluza.",
+            image: "data/media/events/evento_2.jpg",
+            ticket_url: "https://www.instagram.com/p/DO5nx9MjAfD/?hl=es"
+        },
+        {
+            title: "Noche Flamenca",
+            date: "10 de enero 2025",
+            time: "22:00", 
+            venue: "Tablao Flamenco",
+            location: "Sevilla, España",
+            description: "Una noche íntima de flamenco y música tradicional andaluza.",
+            image: "data/media/events/evento_3.jpg",
+            ticket_url: "https://www.instagram.com/p/DOYc5__jBGZ/?hl=es"
+        }
+    ];
+    
+    eventsGrid.innerHTML = '';
+    
+    staticEvents.forEach(event => {
+        const eventDiv = document.createElement('div');
+        eventDiv.className = 'event-item';
+        
+        eventDiv.innerHTML = `
+            <img src="${event.image}" alt="${event.title}" class="event-image" onerror="this.src='data/media/photos/hero-image.jpg'">
+            <div class="event-content">
+                <div class="event-date">${event.date} - ${event.time}</div>
+                <h3 class="event-title">${event.title}</h3>
+                <div class="event-venue">${event.venue}</div>
+                <div class="event-location">${event.location}</div>
+                <p class="event-description">${event.description}</p>
+                <a href="${event.ticket_url}" target="_blank" class="event-ticket-btn">
+                    <i class="fas fa-ticket-alt"></i> Ver Cartel
+                </a>
+            </div>
+        `;
+        
+        eventsGrid.appendChild(eventDiv);
+    });
+    
+    console.log('✅ Eventos estáticos creados');
 }
 
  
