@@ -95,7 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     const songItem = document.createElement('div');
                     songItem.className = 'song-item';
                     songItem.innerHTML = `
-                        <img src="${song.image_url || 'data/media/photos/photo_10.jpg'}" alt="${song.title}">
+                        <div class="song-image">
+                            <img src="${song.image_url || 'data/media/photos/photo_10.jpg'}" alt="${song.title}">
+                        </div>
                         <div class="song-info">
                             <h4>${song.title}</h4>
                             <p>${song.plays ? song.plays.toLocaleString() + ' reproducciones' : 'Single'}</p>

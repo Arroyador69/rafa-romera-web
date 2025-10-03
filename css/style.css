@@ -531,15 +531,18 @@ h2 {
 }
 
 .song-item {
-    flex: 0 0 200px;
+    flex: 0 0 180px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
-    padding: 1.5rem;
+    padding: 1rem;
     text-align: center;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.2);
     cursor: pointer;
     backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .song-item:hover {
@@ -548,24 +551,38 @@ h2 {
     box-shadow: 0 20px 40px rgba(255, 77, 77, 0.3);
 }
 
+.song-image {
+    margin-bottom: 0.8rem;
+}
+
 .song-item img {
-    width: 100%;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     border-radius: 10px;
-    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.song-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .song-info h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
     color: var(--text-color);
+    text-align: center;
+    line-height: 1.2;
 }
 
 .song-info p {
     color: #ccc;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.8rem;
+    text-align: center;
 }
 
 
