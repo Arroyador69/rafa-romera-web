@@ -124,95 +124,21 @@
     <section id="galeria" class="gallery">
         <div class="container">
             <h2>Galería</h2>
-            <div class="gallery-grid">
-                <!-- Fotos de la galería -->
-                <div class="gallery-item" onclick="openLightbox(0)">
-                    <img src="data/media/photos/photo_10.jpg" alt="Rafa Romera">
+            <div class="gallery-carousel">
+                <button class="gallery-nav gallery-prev" onclick="previousGalleryImages()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="gallery-viewport">
+                    <div class="gallery-track" id="galleryTrack">
+                        <!-- Las imágenes se cargarán dinámicamente -->
+                    </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox(1)">
-                    <img src="data/media/photos/photo_6.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(2)">
-                    <img src="data/media/photos/photo_7.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="data/media/photos/photo_8.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(4)">
-                    <img src="data/media/photos/photo_9.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(5)">
-                    <img src="data/media/photos/DSC02250.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(6)">
-                    <img src="data/media/photos/DSC02063.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(7)">
-                    <img src="data/media/photos/DSC02065.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(8)">
-                    <img src="data/media/photos/DSC02066.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(9)">
-                    <img src="data/media/photos/DSC02098-Editar-2.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(10)">
-                    <img src="data/media/photos/DSC02108-2.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(11)">
-                    <img src="data/media/photos/DSC02123.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(12)">
-                    <img src="data/media/photos/DSC02146.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(13)">
-                    <img src="data/media/photos/DSC02148.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(14)">
-                    <img src="data/media/photos/DSC02246.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(15)">
-                    <img src="data/media/photos/DSC02271-2.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(16)">
-                    <img src="data/media/photos/DSC02337.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(17)">
-                    <img src="data/media/photos/DSC02369.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(18)">
-                    <img src="data/media/photos/DSC02435.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(19)">
-                    <img src="data/media/photos/DSC02437.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(20)">
-                    <img src="data/media/photos/DSC02437-2.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(21)">
-                    <img src="data/media/photos/DSC02438.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(22)">
-                    <img src="data/media/photos/DSC02458.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(23)">
-                    <img src="data/media/photos/IMG_5507.JPG" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(24)">
-                    <img src="data/media/photos/IMG_5508.JPG" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(25)">
-                    <img src="data/media/photos/PHOTO-2025-06-05-10-05-21.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(26)">
-                    <img src="data/media/photos/PHOTO-2025-06-05-10-05-22.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(27)">
-                    <img src="data/media/photos/PHOTO-2025-06-05-10-05-22 2.jpg" alt="Rafa Romera">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(28)">
-                    <img src="data/media/photos/PHOTO-2025-06-05-10-05-23.jpg" alt="Rafa Romera">
-                </div>
+                <button class="gallery-nav gallery-next" onclick="nextGalleryImages()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="gallery-indicators" id="galleryIndicators">
+                <!-- Los indicadores se generarán dinámicamente -->
             </div>
         </div>
     </section>

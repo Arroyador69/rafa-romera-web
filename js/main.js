@@ -230,7 +230,101 @@ document.addEventListener('DOMContentLoaded', function() {
     if (floatingPlayer) {
         floatingPlayer.style.display = 'none';
     }
+    
+    // Inicializar galería
+    initGallery();
 });
+
+// Funciones de la galería
+function initGallery() {
+    const galleryTrack = document.getElementById('galleryTrack');
+    const galleryIndicators = document.getElementById('galleryIndicators');
+    
+    if (!galleryTrack || !galleryIndicators) return;
+    
+    // Limpiar contenido existente
+    galleryTrack.innerHTML = '';
+    galleryIndicators.innerHTML = '';
+    
+    // Crear elementos de imagen
+    galleryImages.forEach((imageSrc, index) => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+        galleryItem.onclick = () => openLightbox(index);
+        
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.alt = `Rafa Romera ${index + 1}`;
+        
+        galleryItem.appendChild(img);
+        galleryTrack.appendChild(galleryItem);
+    });
+    
+    // Crear indicadores
+    const totalPages = Math.ceil(galleryImages.length / 4);
+    for (let i = 0; i < totalPages; i++) {
+        const indicator = document.createElement('div');
+        indicator.className = `gallery-indicator ${i === 0 ? 'active' : ''}`;
+        indicator.onclick = () => goToGalleryPage(i);
+        galleryIndicators.appendChild(indicator);
+    }
+    
+    // Actualizar vista inicial
+    updateGalleryView();
+}
+
+function updateGalleryView() {
+    const galleryTrack = document.getElementById('galleryTrack');
+    const indicators = document.querySelectorAll('.gallery-indicator');
+    const prevBtn = document.querySelector('.gallery-prev');
+    const nextBtn = document.querySelector('.gallery-next');
+    
+    if (!galleryTrack) return;
+    
+    // Calcular desplazamiento
+    const itemWidth = galleryTrack.children[0]?.offsetWidth || 0;
+    const gap = 20;
+    const translateX = -(currentGalleryPage * 4 * (itemWidth + gap));
+    
+    galleryTrack.style.transform = `translateX(${translateX}px)`;
+    
+    // Actualizar indicadores
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentGalleryPage);
+    });
+    
+    // Actualizar botones
+    if (prevBtn) {
+        prevBtn.disabled = currentGalleryPage === 0;
+    }
+    if (nextBtn) {
+        const totalPages = Math.ceil(galleryImages.length / 4);
+        nextBtn.disabled = currentGalleryPage >= totalPages - 1;
+    }
+}
+
+function previousGalleryImages() {
+    if (currentGalleryPage > 0) {
+        currentGalleryPage--;
+        updateGalleryView();
+    }
+}
+
+function nextGalleryImages() {
+    const totalPages = Math.ceil(galleryImages.length / 4);
+    if (currentGalleryPage < totalPages - 1) {
+        currentGalleryPage++;
+        updateGalleryView();
+    }
+}
+
+function goToGalleryPage(page) {
+    const totalPages = Math.ceil(galleryImages.length / 4);
+    if (page >= 0 && page < totalPages) {
+        currentGalleryPage = page;
+        updateGalleryView();
+    }
+}
 
 // Función para agregar efecto de desvanecimiento a las canciones
 function addFadeEffect() {
@@ -275,9 +369,9 @@ function addFadeEffect() {
     updateFadeEffect();
 }
 
-// Funcionalidad del Lightbox
-let currentImageIndex = 0;
-const images = [
+// Funcionalidad de la Galería
+let currentGalleryPage = 0;
+let galleryImages = [
     'data/media/photos/photo_10.jpg',
     'data/media/photos/photo_6.jpg',
     'data/media/photos/photo_7.jpg',
@@ -308,6 +402,10 @@ const images = [
     'data/media/photos/PHOTO-2025-06-05-10-05-22 2.jpg',
     'data/media/photos/PHOTO-2025-06-05-10-05-23.jpg'
 ];
+
+// Funcionalidad del Lightbox
+let currentImageIndex = 0;
+const images = galleryImages;
 
 function openLightbox(index) {
     currentImageIndex = index;
