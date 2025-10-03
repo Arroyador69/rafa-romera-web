@@ -1086,7 +1086,7 @@ h2 {
 /* Events Section */
 .events {
     padding: 100px 0;
-    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+    background: #0a0a1a;
 }
 
 .events-grid {
@@ -1155,11 +1155,18 @@ h2 {
     line-height: 1.6;
     margin-bottom: 20px;
     font-size: 0.95rem;
+    white-space: pre-line;
 }
 
-.event-ticket-btn {
+.event-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.event-instagram-btn {
     display: inline-block;
-    background: linear-gradient(45deg, var(--primary-color), #ff6b35);
+    background: linear-gradient(45deg, #E4405F, #C13584);
     color: white;
     padding: 12px 25px;
     border-radius: 25px;
@@ -1167,13 +1174,18 @@ h2 {
     font-weight: 600;
     transition: all 0.3s ease;
     text-align: center;
-    width: 100%;
+    flex: 1;
+    min-width: 200px;
 }
 
-.event-ticket-btn:hover {
+.event-instagram-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 10px 20px rgba(196, 53, 132, 0.3);
     color: white;
+}
+
+.event-instagram-btn i {
+    margin-right: 8px;
 }
 
 /* Contacto */

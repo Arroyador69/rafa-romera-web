@@ -6,9 +6,10 @@
         "time": "21:00",
         "venue": "Teatro Cervantes",
         "location": "Málaga, España",
-        "description": "Rafa Romera presenta su nuevo repertorio en el emblemático Teatro Cervantes de Málaga. Una noche llena de música andaluza y emociones.",
+        "description": "🎵 ¡Nos vemos en Málaga! 🎵\n\nEl próximo 15 de diciembre estaré en el Teatro Cervantes presentando mi nuevo repertorio. Una noche llena de música andaluza, emociones y la pasión que solo Málaga puede ofrecer.\n\n📍 Teatro Cervantes, Málaga\n🕘 21:00 horas\n\n¡No te lo pierdas! Las entradas ya están disponibles.",
         "image": "data/media/events/evento_1.jpg",
-        "ticket_url": "https://www.instagram.com/p/DOjJbPJjPUH/?hl=es",
+        "instagram_url": "https://www.instagram.com/p/DOjJbPJjPUH/?hl=es",
+        "instagram_embed": "https://www.instagram.com/p/DOjJbPJjPUH/embed/",
         "status": "upcoming"
     },
     {
@@ -18,9 +19,10 @@
         "time": "20:30",
         "venue": "Plaza de Toros",
         "location": "Córdoba, España",
-        "description": "Participación especial en el Festival de Música Andaluza. Rafa Romera compartirá escenario con otros grandes artistas de la región.",
+        "description": "🎭 Festival de Música Andaluza 🎭\n\nEl 22 de diciembre participaré en el Festival de Música Andaluza en la emblemática Plaza de Toros de Córdoba. Compartiré escenario con otros grandes artistas de nuestra tierra.\n\n📍 Plaza de Toros, Córdoba\n🕘 20:30 horas\n\nUna noche única donde la tradición y la modernidad se encuentran.",
         "image": "data/media/events/evento_2.jpg",
-        "ticket_url": "https://www.instagram.com/p/DO5nx9MjAfD/?hl=es",
+        "instagram_url": "https://www.instagram.com/p/DO5nx9MjAfD/?hl=es",
+        "instagram_embed": "https://www.instagram.com/p/DO5nx9MjAfD/embed/",
         "status": "upcoming"
     },
     {
@@ -30,9 +32,10 @@
         "time": "22:00",
         "venue": "Tablao Flamenco",
         "location": "Sevilla, España",
-        "description": "Una noche íntima de flamenco y música tradicional andaluza en uno de los tablaos más emblemáticos de Sevilla.",
+        "description": "🔥 Noche Flamenca en Sevilla 🔥\n\nEl 10 de enero tendremos una noche íntima de flamenco y música tradicional andaluza en uno de los tablaos más emblemáticos de Sevilla.\n\n📍 Tablao Flamenco, Sevilla\n🕘 22:00 horas\n\nUna experiencia única donde el duende y la pasión se dan la mano.",
         "image": "data/media/events/evento_3.jpg",
-        "ticket_url": "https://www.instagram.com/p/DOYc5__jBGZ/?hl=es",
+        "instagram_url": "https://www.instagram.com/p/DOYc5__jBGZ/?hl=es",
+        "instagram_embed": "https://www.instagram.com/p/DOYc5__jBGZ/embed/",
         "status": "upcoming"
     }
 ]

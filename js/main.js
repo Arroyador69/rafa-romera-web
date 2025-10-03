@@ -593,6 +593,9 @@ function createEventElement(event) {
     console.log('📅 Fecha formateada:', formattedDate);
     console.log('🖼️ Imagen del evento:', event.image);
     
+    // Convertir saltos de línea en HTML
+    const formattedDescription = event.description.replace(/\n/g, '<br>');
+    
     eventDiv.innerHTML = `
         <img src="${event.image}" alt="${event.title}" class="event-image" onerror="console.error('Error cargando imagen:', this.src); this.src='data/media/photos/hero-image.jpg'">
         <div class="event-content">
@@ -600,10 +603,12 @@ function createEventElement(event) {
             <h3 class="event-title">${event.title}</h3>
             <div class="event-venue">${event.venue}</div>
             <div class="event-location">${event.location}</div>
-            <p class="event-description">${event.description}</p>
-            <a href="${event.ticket_url}" target="_blank" class="event-ticket-btn">
-                <i class="fas fa-ticket-alt"></i> Ver Cartel
-            </a>
+            <div class="event-description">${formattedDescription}</div>
+            <div class="event-buttons">
+                <a href="${event.instagram_url}" target="_blank" class="event-instagram-btn">
+                    <i class="fab fa-instagram"></i> Ver en Instagram
+                </a>
+            </div>
         </div>
     `;
     
@@ -656,6 +661,8 @@ function createStaticEvents() {
         const eventDiv = document.createElement('div');
         eventDiv.className = 'event-item';
         
+        const formattedDescription = event.description.replace(/\n/g, '<br>');
+        
         eventDiv.innerHTML = `
             <img src="${event.image}" alt="${event.title}" class="event-image" onerror="this.src='data/media/photos/hero-image.jpg'">
             <div class="event-content">
@@ -663,10 +670,12 @@ function createStaticEvents() {
                 <h3 class="event-title">${event.title}</h3>
                 <div class="event-venue">${event.venue}</div>
                 <div class="event-location">${event.location}</div>
-                <p class="event-description">${event.description}</p>
-                <a href="${event.ticket_url}" target="_blank" class="event-ticket-btn">
-                    <i class="fas fa-ticket-alt"></i> Ver Cartel
-                </a>
+                <div class="event-description">${formattedDescription}</div>
+                <div class="event-buttons">
+                    <a href="${event.ticket_url}" target="_blank" class="event-instagram-btn">
+                        <i class="fab fa-instagram"></i> Ver en Instagram
+                    </a>
+                </div>
             </div>
         `;
         
