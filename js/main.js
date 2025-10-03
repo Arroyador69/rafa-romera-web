@@ -233,6 +233,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializar galería
     initGallery();
+    
+    // Agregar navegación con teclado
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            previousGalleryImages();
+        } else if (e.key === 'ArrowRight') {
+            nextGalleryImages();
+        }
+    });
 });
 
 // Funciones de la galería
@@ -246,21 +255,23 @@ function initGallery() {
     galleryTrack.innerHTML = '';
     galleryIndicators.innerHTML = '';
     
-    // Crear elementos de imagen
-    galleryImages.forEach((imageSrc, index) => {
+    // Crear elementos de imagen (duplicar para bucle infinito)
+    const duplicatedImages = [...galleryImages, ...galleryImages, ...galleryImages];
+    
+    duplicatedImages.forEach((imageSrc, index) => {
         const galleryItem = document.createElement('div');
         galleryItem.className = 'gallery-item';
-        galleryItem.onclick = () => openLightbox(index);
+        galleryItem.onclick = () => openLightbox(index % galleryImages.length);
         
         const img = document.createElement('img');
         img.src = imageSrc;
-        img.alt = `Rafa Romera ${index + 1}`;
+        img.alt = `Rafa Romera ${(index % galleryImages.length) + 1}`;
         
         galleryItem.appendChild(img);
         galleryTrack.appendChild(galleryItem);
     });
     
-    // Crear indicadores
+    // Crear indicadores (solo para las imágenes originales)
     const totalPages = Math.ceil(galleryImages.length / 4);
     for (let i = 0; i < totalPages; i++) {
         const indicator = document.createElement('div');
@@ -269,7 +280,8 @@ function initGallery() {
         galleryIndicators.appendChild(indicator);
     }
     
-    // Actualizar vista inicial
+    // Posicionar en el centro (segundo conjunto de imágenes)
+    currentGalleryPage = totalPages;
     updateGalleryView();
 }
 
@@ -288,40 +300,56 @@ function updateGalleryView() {
     
     galleryTrack.style.transform = `translateX(${translateX}px)`;
     
+    // Calcular página actual para indicadores (modo bucle)
+    const totalPages = Math.ceil(galleryImages.length / 4);
+    const currentIndicatorPage = currentGalleryPage % totalPages;
+    
     // Actualizar indicadores
     indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === currentGalleryPage);
+        indicator.classList.toggle('active', index === currentIndicatorPage);
     });
     
-    // Actualizar botones
+    // Los botones nunca se deshabilitan en modo infinito
     if (prevBtn) {
-        prevBtn.disabled = currentGalleryPage === 0;
+        prevBtn.disabled = false;
     }
     if (nextBtn) {
-        const totalPages = Math.ceil(galleryImages.length / 4);
-        nextBtn.disabled = currentGalleryPage >= totalPages - 1;
+        nextBtn.disabled = false;
     }
 }
 
 function previousGalleryImages() {
-    if (currentGalleryPage > 0) {
-        currentGalleryPage--;
-        updateGalleryView();
+    currentGalleryPage--;
+    updateGalleryView();
+    
+    // Resetear posición si llegamos al principio
+    const totalPages = Math.ceil(galleryImages.length / 4);
+    if (currentGalleryPage < 0) {
+        setTimeout(() => {
+            currentGalleryPage = totalPages * 2 - 1;
+            updateGalleryView();
+        }, 500);
     }
 }
 
 function nextGalleryImages() {
+    currentGalleryPage++;
+    updateGalleryView();
+    
+    // Resetear posición si llegamos al final
     const totalPages = Math.ceil(galleryImages.length / 4);
-    if (currentGalleryPage < totalPages - 1) {
-        currentGalleryPage++;
-        updateGalleryView();
+    if (currentGalleryPage >= totalPages * 3) {
+        setTimeout(() => {
+            currentGalleryPage = totalPages;
+            updateGalleryView();
+        }, 500);
     }
 }
 
 function goToGalleryPage(page) {
     const totalPages = Math.ceil(galleryImages.length / 4);
     if (page >= 0 && page < totalPages) {
-        currentGalleryPage = page;
+        currentGalleryPage = totalPages + page;
         updateGalleryView();
     }
 }
