@@ -440,28 +440,34 @@ h2 {
     background: linear-gradient(135deg, #1DB954, #1ed760);
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 50%;
-    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.8rem;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(29, 185, 84, 0.3);
-    width: 36px;
-    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 6px;
     margin-top: 8px;
+    font-weight: 600;
+    min-width: 140px;
 }
 
 .play-button:hover {
     background: linear-gradient(135deg, #1ed760, #1DB954);
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(29, 185, 84, 0.5);
 }
 
 .play-button i {
-    margin-left: 2px; /* Ajuste visual para centrar el icono de play */
+    font-size: 0.9rem;
+}
+
+.play-button span {
+    font-size: 0.75rem;
+    white-space: nowrap;
 }
 
 .spotify-link {
@@ -561,24 +567,6 @@ h2 {
     font-size: 0.9rem;
 }
 
-.song-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--primary-color);
-    color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-}
-
-.song-link:hover {
-    background: #ff3333;
-    transform: scale(1.05);
-}
 
 /* Video Container Full Width */
 .video-container-full {

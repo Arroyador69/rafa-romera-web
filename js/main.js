@@ -101,11 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p>${song.plays ? song.plays.toLocaleString() + ' reproducciones' : 'Single'}</p>
                             <button class="play-button" onclick="window.open('${song.spotify_url || 'https://open.spotify.com/intl-es/artist/5L6WDyrviuO7HkNgMdDeCa'}', '_blank')">
                                 <i class="fas fa-play"></i>
+                                <span>Escuchar en Spotify</span>
                             </button>
                         </div>
-                        <a href="${song.spotify_url || 'https://open.spotify.com/intl-es/artist/5L6WDyrviuO7HkNgMdDeCa'}" target="_blank" class="song-link">
-                            <i class="fab fa-spotify"></i> Escuchar
-                        </a>
                     `;
                     songsTrack.appendChild(songItem);
                 });
