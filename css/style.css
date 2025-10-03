@@ -440,7 +440,7 @@ h2 {
     background: linear-gradient(135deg, #1DB954, #1ed760);
     color: white;
     border: none;
-    padding: 6px 12px;
+    padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.75rem;
     cursor: pointer;
@@ -449,11 +449,11 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: 6px;
     margin-top: 8px;
     font-weight: 600;
     width: auto;
-    max-width: 120px;
+    min-width: 140px;
 }
 
 .play-button:hover {
@@ -515,6 +515,28 @@ h2 {
     animation: scrollSongs 30s linear infinite;
     gap: 2rem;
     padding: 0 2rem;
+    position: relative;
+}
+
+.songs-carousel::before,
+.songs-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.songs-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.songs-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
 }
 
 .songs-track:hover {

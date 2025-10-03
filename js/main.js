@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Duplicar las canciones para el efecto de carrusel infinito
                 const songs = [...data.popular_songs, ...data.popular_songs];
                 
-                songs.forEach(song => {
+                songs.forEach((song, index) => {
                     const songItem = document.createElement('div');
                     songItem.className = 'song-item';
                     songItem.innerHTML = `
@@ -109,6 +109,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     `;
                     songsTrack.appendChild(songItem);
                 });
+                
+                // Agregar efecto de desvanecimiento dinámico
+                addFadeEffect();
             }
 
             // Actualizar discografía
@@ -228,6 +231,49 @@ document.addEventListener('DOMContentLoaded', function() {
         floatingPlayer.style.display = 'none';
     }
 });
+
+// Función para agregar efecto de desvanecimiento a las canciones
+function addFadeEffect() {
+    const songsTrack = document.querySelector('.songs-track');
+    const songsCarousel = document.querySelector('.songs-carousel');
+    
+    if (!songsTrack || !songsCarousel) return;
+    
+    function updateFadeEffect() {
+        const carouselRect = songsCarousel.getBoundingClientRect();
+        const songItems = songsTrack.querySelectorAll('.song-item');
+        
+        songItems.forEach(item => {
+            const itemRect = item.getBoundingClientRect();
+            const itemCenter = itemRect.left + itemRect.width / 2;
+            const carouselLeft = carouselRect.left;
+            const carouselRight = carouselRect.right;
+            
+            // Calcular opacidad basada en la posición
+            let opacity = 1;
+            
+            // Fade out en los bordes
+            if (itemCenter < carouselLeft + 100) {
+                opacity = Math.max(0.3, (itemCenter - carouselLeft) / 100);
+            } else if (itemCenter > carouselRight - 100) {
+                opacity = Math.max(0.3, (carouselRight - itemCenter) / 100);
+            }
+            
+            item.style.opacity = opacity;
+            item.style.transition = 'opacity 0.3s ease';
+        });
+    }
+    
+    // Actualizar el efecto en scroll y resize
+    window.addEventListener('scroll', updateFadeEffect);
+    window.addEventListener('resize', updateFadeEffect);
+    
+    // Actualizar periódicamente durante la animación
+    setInterval(updateFadeEffect, 100);
+    
+    // Inicializar
+    updateFadeEffect();
+}
 
 // Funcionalidad del Lightbox
 let currentImageIndex = 0;
