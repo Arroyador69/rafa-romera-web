@@ -124,6 +124,7 @@ body {
     max-width: 600px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+    margin-top: 15vh;
 }
 
 .hero-image {
@@ -301,9 +302,9 @@ h2 {
 .bio-text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     height: 100%;
-    padding-top: 20px;
+    padding-top: 0;
 }
 
 .bio-text p {
