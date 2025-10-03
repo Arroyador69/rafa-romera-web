@@ -436,13 +436,32 @@ h2 {
     margin-bottom: 5px;
 }
 
-.song-year {
-    background-color: var(--primary-color);
+.play-button {
+    background: linear-gradient(135deg, #1DB954, #1ed760);
     color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(29, 185, 84, 0.3);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.play-button:hover {
+    background: linear-gradient(135deg, #1ed760, #1DB954);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(29, 185, 84, 0.5);
+}
+
+.play-button i {
+    margin-left: 2px; /* Ajuste visual para centrar el icono de play */
 }
 
 .spotify-link {
