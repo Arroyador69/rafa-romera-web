@@ -85,21 +85,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Actualizar carrusel de canciones en discografía
             const songsTrack = document.querySelector('.songs-track');
+            console.log('songsTrack encontrado:', songsTrack);
+            console.log('data.popular_songs:', data.popular_songs);
+            
             if (songsTrack && data.popular_songs) {
                 songsTrack.innerHTML = '';
                 
                 // Duplicar las canciones para el efecto de carrusel infinito
                 const songs = [...data.popular_songs, ...data.popular_songs];
+                console.log('Total de canciones a mostrar:', songs.length);
                 
-                songs.forEach(song => {
+                songs.forEach((song, index) => {
                     const songItem = document.createElement('div');
                     songItem.className = 'song-item';
                     
                     // Debug: Log de la URL de la imagen
-                    console.log('Cargando imagen para:', song.title, 'URL:', song.image_url);
+                    console.log(`Canción ${index + 1}:`, song.title, 'URL:', song.image_url);
                     
                     songItem.innerHTML = `
-                        <img src="${song.image_url || 'data/media/photos/photo_10.jpg'}" alt="${song.title}" onload="console.log('Imagen cargada:', '${song.title}')" onerror="console.error('Error cargando imagen:', '${song.title}', '${song.image_url}')">
+                        <img src="${song.image_url || 'data/media/photos/photo_10.jpg'}" alt="${song.title}" onload="console.log('✅ Imagen cargada:', '${song.title}')" onerror="console.error('❌ Error cargando imagen:', '${song.title}', '${song.image_url}')">
                         <div class="song-info">
                             <h4>${song.title}</h4>
                             <p>${song.plays ? song.plays.toLocaleString() + ' reproducciones' : 'Single'}</p>
@@ -111,6 +115,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     `;
                     songsTrack.appendChild(songItem);
                 });
+                
+                console.log('Elementos añadidos al carrusel:', songsTrack.children.length);
+            } else {
+                console.error('❌ No se encontró songsTrack o data.popular_songs');
             }
 
             // Actualizar discografía
