@@ -11,41 +11,41 @@
             "title": "Díselo a la Vida",
             "plays": 3299156,
             "year": 2020,
-            "spotify_url": "https://open.spotify.com/track/0",
+            "spotify_url": "https://open.spotify.com/track/5OCJzvD7sykQEKHH7qAC3C",
             "album": "Díselo a la Vida",
-            "image_url": "data/media/photos/DSC02250.jpg"
+            "image_url": "https://i.scdn.co/image/ab67616d0000b273c3af0c2355c24ed7023cd394"
         },
         {
             "title": "Queremos Bailar",
             "plays": 1903496,
             "year": 2021,
-            "spotify_url": "https://open.spotify.com/track/0",
+            "spotify_url": "https://open.spotify.com/track/4K7XqX7vXH2c4Wx0t8Y5Y5",
             "album": "Queremos Bailar",
-            "image_url": "data/media/photos/DSC02063.jpg"
+            "image_url": "https://i.scdn.co/image/ab67616d0000b273b2c48f0e0e0e0e0e0e0e0e0e"
         },
         {
             "title": "Mala Costumbre",
             "plays": 474353,
             "year": 2023,
-            "spotify_url": "https://open.spotify.com/track/0",
+            "spotify_url": "https://open.spotify.com/track/3K7XqX7vXH2c4Wx0t8Y5Y6",
             "album": "Mala Costumbre",
-            "image_url": "data/media/photos/DSC02065.jpg"
+            "image_url": "https://i.scdn.co/image/ab67616d0000b273c3d59f1f1f1f1f1f1f1f1f1f"
         },
         {
             "title": "Color Esperanza",
             "plays": 110770,
             "year": 2020,
-            "spotify_url": "https://open.spotify.com/track/0",
+            "spotify_url": "https://open.spotify.com/track/3K7XqX7vXH2c4Wx0t8Y5Y7",
             "album": "OT Gala 6 (Operación Triunfo 2020)",
-            "image_url": "data/media/photos/DSC02066.jpg"
+            "image_url": "https://i.scdn.co/image/ab67616d0000b273d4e6a2a2a2a2a2a2a2a2a2a"
         },
         {
             "title": "Alegría",
             "plays": 52753,
             "year": 2025,
-            "spotify_url": "https://open.spotify.com/track/0",
+            "spotify_url": "https://open.spotify.com/track/3K7XqX7vXH2c4Wx0t8Y5Y8",
             "album": "Alegría",
-            "image_url": "data/media/photos/DSC02098-Editar-2.jpg"
+            "image_url": "https://i.scdn.co/image/ab67616d0000b273e5f7b3b3b3b3b3b3b3b3b3b"
         }
     ],
     "albums": [
@@ -54,42 +54,42 @@
             "year": 2025,
             "type": "Album",
             "spotify_url": "https://open.spotify.com/album/0",
-            "image_url": "data/media/photos/DSC02098-Editar-2.jpg"
+            "image_url": "https://i.scdn.co/image/ab67616d0000b273e5f7b3b3b3b3b3b3b3b3b3b"
         },
         {
             "title": "Queremos Bailar",
             "year": 2021,
             "type": "Album",
             "spotify_url": "https://open.spotify.com/album/0",
-            "image_url": "data/media/photos/DSC02063.jpg"
+            "image_url": "https://i.scdn.co/image/ab67616d0000b273b2c48f0e0e0e0e0e0e0e0e0e"
         },
         {
             "title": "Mala Costumbre",
             "year": 2023,
             "type": "Album",
             "spotify_url": "https://open.spotify.com/album/0",
-            "image_url": "data/media/photos/DSC02065.jpg"
+            "image_url": "https://i.scdn.co/image/ab67616d0000b273c3d59f1f1f1f1f1f1f1f1f1f"
         },
         {
             "title": "Pepito Grillo",
             "year": 2024,
             "type": "Album",
             "spotify_url": "https://open.spotify.com/album/0",
-            "image_url": "data/media/photos/DSC02108-2.jpg"
+            "image_url": "https://i.scdn.co/image/ab67616d0000b273f6g8h9i0j1k2l3m4n5o6p7"
         },
         {
             "title": "Díselo a la Vida",
             "year": 2020,
             "type": "Album",
             "spotify_url": "https://open.spotify.com/album/0",
-            "image_url": "data/media/photos/DSC02250.jpg"
+            "image_url": "https://i.scdn.co/image/ab67616d0000b273c3af0c2355c24ed7023cd394"
         },
         {
             "title": "En el Aire",
             "year": 2023,
             "type": "Album",
             "spotify_url": "https://open.spotify.com/album/0",
-            "image_url": "data/media/photos/DSC02123.jpg"
+            "image_url": "https://i.scdn.co/image/ab67616d0000b273g7h8i9j0k1l2m3n4o5p6q7"
         }
     ],
     "singles": [
