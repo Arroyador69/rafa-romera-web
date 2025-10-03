@@ -873,14 +873,16 @@ h2 {
 
 .lightbox-content {
     position: relative;
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 80%;
+    max-height: 80%;
     text-align: center;
 }
 
 .lightbox-image {
     max-width: 100%;
-    max-height: 80vh;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
     object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -939,6 +941,15 @@ h2 {
 
 /* Responsive para lightbox */
 @media (max-width: 768px) {
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 85%;
+    }
+    
+    .lightbox-image {
+        max-height: 60vh;
+    }
+    
     .lightbox-prev,
     .lightbox-next {
         padding: 10px;
