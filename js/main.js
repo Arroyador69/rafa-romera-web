@@ -61,10 +61,32 @@ if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Aquí iría la lógica para enviar el formulario
-        // Por ahora solo mostramos un mensaje
-        alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.');
-        contactForm.reset();
+        const name = document.getElementById('contactName').value;
+        const email = document.getElementById('contactEmail').value;
+        const message = document.getElementById('contactMessage').value;
+        const statusDiv = document.getElementById('formStatus');
+        
+        // Mostrar estado de carga
+        statusDiv.innerHTML = '<p style="color: #007bff;">Enviando mensaje...</p>';
+        
+        // Crear enlace mailto con todos los datos
+        const subject = encodeURIComponent(`Mensaje desde la web de Rafa Romera - ${name}`);
+        const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\nMensaje:\n${message}`);
+        const mailtoLink = `mailto:erreshopping@gmail.com?subject=${subject}&body=${body}`;
+        
+        // Abrir cliente de email
+        window.location.href = mailtoLink;
+        
+        // Mostrar mensaje de éxito
+        setTimeout(() => {
+            statusDiv.innerHTML = '<p style="color: #28a745;">¡Mensaje preparado! Se abrirá tu cliente de email para enviarlo.</p>';
+            contactForm.reset();
+        }, 1000);
+        
+        // Limpiar mensaje después de 5 segundos
+        setTimeout(() => {
+            statusDiv.innerHTML = '';
+        }, 5000);
     });
 }
 
@@ -476,8 +498,32 @@ function openLightbox(index) {
     const lightboxImage = document.getElementById('lightbox-image');
     const lightboxCounter = document.getElementById('lightbox-counter');
     
+    // Forzar estilos inline para asegurar que se apliquen
+    lightboxImage.style.width = '500px';
+    lightboxImage.style.height = '375px';
+    lightboxImage.style.maxWidth = '500px';
+    lightboxImage.style.maxHeight = '375px';
+    lightboxImage.style.minWidth = '500px';
+    lightboxImage.style.minHeight = '375px';
+    lightboxImage.style.objectFit = 'cover';
+    lightboxImage.style.display = 'block';
+    lightboxImage.style.margin = '0 auto';
+    
     lightboxImage.src = images[index];
     lightboxCounter.textContent = `${index + 1} / ${images.length}`;
+    
+    // Asegurar que los estilos se mantengan cuando la imagen se carga
+    lightboxImage.onload = function() {
+        this.style.width = '500px';
+        this.style.height = '375px';
+        this.style.maxWidth = '500px';
+        this.style.maxHeight = '375px';
+        this.style.minWidth = '500px';
+        this.style.minHeight = '375px';
+        this.style.objectFit = 'cover';
+        this.style.display = 'block';
+        this.style.margin = '0 auto';
+    };
     
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -494,8 +540,34 @@ function changeImage(direction) {
     const lightboxImage = document.getElementById('lightbox-image');
     const lightboxCounter = document.getElementById('lightbox-counter');
     
-    lightboxImage.src = images[currentImageIndex];
-    lightboxCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+    // Forzar que la imagen se recargue y aplique los estilos
+    lightboxImage.src = '';
+    lightboxImage.style.width = '500px';
+    lightboxImage.style.height = '375px';
+    lightboxImage.style.maxWidth = '500px';
+    lightboxImage.style.maxHeight = '375px';
+    lightboxImage.style.minWidth = '500px';
+    lightboxImage.style.minHeight = '375px';
+    lightboxImage.style.objectFit = 'cover';
+    
+    // Pequeño delay para asegurar que se apliquen los estilos
+    setTimeout(() => {
+        lightboxImage.src = images[currentImageIndex];
+        lightboxCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+        
+        // Asegurar que los estilos se mantengan cuando la imagen se carga
+        lightboxImage.onload = function() {
+            this.style.width = '500px';
+            this.style.height = '375px';
+            this.style.maxWidth = '500px';
+            this.style.maxHeight = '375px';
+            this.style.minWidth = '500px';
+            this.style.minHeight = '375px';
+            this.style.objectFit = 'cover';
+            this.style.display = 'block';
+            this.style.margin = '0 auto';
+        };
+    }, 50);
 }
 
 // Cerrar lightbox con ESC

@@ -913,19 +913,28 @@ h2 {
 
 .lightbox-content {
     position: relative;
-    max-width: 80%;
-    max-height: 80%;
+    width: 520px;
+    height: 395px;
+    max-width: 520px;
+    max-height: 395px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .lightbox-image {
-    max-width: 100%;
-    max-height: 70vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    width: 500px !important;
+    height: 375px !important;
+    max-width: 500px !important;
+    max-height: 375px !important;
+    min-width: 500px !important;
+    min-height: 375px !important;
+    object-fit: cover !important;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: block !important;
+    margin: 0 auto !important;
 }
 
 .lightbox-close {
@@ -982,12 +991,20 @@ h2 {
 /* Responsive para lightbox */
 @media (max-width: 768px) {
     .lightbox-content {
-        max-width: 95%;
-        max-height: 85%;
+        width: 420px;
+        height: 320px;
+        max-width: 420px;
+        max-height: 320px;
     }
     
     .lightbox-image {
-        max-height: 60vh;
+        width: 400px !important;
+        height: 300px !important;
+        max-width: 400px !important;
+        max-height: 300px !important;
+        min-width: 400px !important;
+        min-height: 300px !important;
+        object-fit: cover !important;
     }
     
     .lightbox-prev,
@@ -1007,6 +1024,44 @@ h2 {
     .lightbox-close {
         top: -40px;
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lightbox-content {
+        width: 340px;
+        height: 260px;
+        max-width: 340px;
+        max-height: 260px;
+    }
+    
+    .lightbox-image {
+        width: 320px !important;
+        height: 240px !important;
+        max-width: 320px !important;
+        max-height: 240px !important;
+        min-width: 320px !important;
+        min-height: 240px !important;
+        object-fit: cover !important;
+    }
+    
+    .lightbox-prev,
+    .lightbox-next {
+        padding: 8px;
+        font-size: 1rem;
+    }
+    
+    .lightbox-prev {
+        left: 5px;
+    }
+    
+    .lightbox-next {
+        right: 5px;
+    }
+    
+    .lightbox-close {
+        top: -35px;
+        font-size: 1.3rem;
     }
 }
 
@@ -1173,6 +1228,19 @@ h2 {
 .contact-form textarea {
     height: 150px;
     resize: none;
+}
+
+.form-status {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.form-status p {
+    margin: 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Footer */
