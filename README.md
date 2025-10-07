@@ -1,4 +1,4 @@
-# Web Scraper para Rafa Romera
+# Web para Rafa Romera
 
 Este proyecto contiene un script de web scraping para recopilar información pública sobre el cantante Rafa Romera, con el objetivo de crear su página web oficial.
 
