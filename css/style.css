@@ -340,7 +340,7 @@ h2 {
 .bio-text p {
     margin-bottom: 30px;
     font-size: 1.4rem;
-    color: var(--text-color);
+    color: #f5f5f5;
     line-height: 1.8;
     text-align: justify;
 }
@@ -348,7 +348,7 @@ h2 {
 .bio-text p:first-child {
     font-size: 1.6rem;
     font-weight: 500;
-    color: #ffcc00;
+    color: #f5f5f5;
     margin-bottom: 35px;
 }
 
