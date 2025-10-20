@@ -51,6 +51,13 @@ body {
     color: var(--text-color);
 }
 
+.logo-image {
+    height: 40px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -1028,6 +1035,11 @@ h2 {
 }
 
 @media (max-width: 480px) {
+    .logo-image {
+        height: 30px;
+        max-width: 120px;
+    }
+    
     .lightbox-content {
         width: 340px;
         height: 260px;
@@ -1252,6 +1264,11 @@ h2 {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .logo-image {
+        height: 35px;
+        max-width: 150px;
+    }
+    
     .hamburger {
         display: flex;
     }
