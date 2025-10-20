@@ -18,14 +18,14 @@
 /* Responsive adjustments for Ultra Condensed Sans Serif */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 4.5rem;
+        font-size: 5.4rem;
         letter-spacing: 5px;
     }
 }
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 4.2rem;
         letter-spacing: 3px;
     }
 }

@@ -54,7 +54,7 @@
 
 .hero-title {
     font-family: 'Ultra Condensed Sans Serif', 'Barlow Condensed', 'Arial Black', sans-serif;
-    font-size: 7rem;
+    font-size: 8.4rem;
     font-weight: 900;
     margin-bottom: 30px;
     color: white;
@@ -108,7 +108,7 @@
 /* Responsive */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 4rem;
+        font-size: 4.8rem;
         letter-spacing: 6px;
     }
     
@@ -120,7 +120,7 @@
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 3rem;
+        font-size: 3.6rem;
         letter-spacing: 4px;
     }
 }
