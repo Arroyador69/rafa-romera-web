@@ -13,26 +13,7 @@
     src: url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&display=swap');
 }
 
-/* Hero Title with Ultra Condensed Sans Serif */
-.hero-title {
-    font-family: 'Ultra Condensed Sans Serif', 'Barlow Condensed', 'Arial Black', sans-serif;
-    font-weight: 900;
-    font-stretch: condensed;
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    line-height: 0.8;
-    font-size: 7rem;
-    margin-bottom: 30px;
-    color: white;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
-    transition: opacity 0.3s ease;
-    text-align: center;
-    width: 100%;
-    position: relative;
-    z-index: 4;
-}
-
-/* Responsive adjustments for MD Tall */
+/* Responsive adjustments for Ultra Condensed Sans Serif */
 @media (max-width: 768px) {
     .hero-title {
         font-size: 4.5rem;
