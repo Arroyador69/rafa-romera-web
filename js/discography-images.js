@@ -46,7 +46,7 @@ function createAlbumElement(album, coverInfo) {
             <img src="${coverInfo.cover_image}" 
                  alt="${coverInfo.cover_alt}" 
                  class="album-image"
-                 onerror="this.src='data/media/covers/pepito-grillo-ep-cover.jpg'">
+                 onerror="this.src='data/media/covers/pepito-grillo-ep-cover.png'">
         </div>
         <div class="album-info">
             <h4 class="album-title">${album.title}</h4>

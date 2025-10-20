@@ -11,25 +11,57 @@
             "title": "Me Lleve a la Luna",
             "plays": 250000,
             "year": 2025,
-            "spotify_url": "https://open.spotify.com/intl-es/album/0GvYb51pA6EU9ftcSMU1SR",
+            "spotify_url": "https://open.spotify.com/intl-es/track/0x3jIl43Ch2b2F9eflP6Oh",
             "album": "Me Lleve a la Luna",
-            "image_url": "data/media/covers/me-lleve-a-la-luna-cover.jpg"
+            "image_url": "data/media/covers/pepito-grillo-ep-cover.png",
+            "duration": "3:06"
         },
         {
-            "title": "No Me Olvido",
-            "plays": 180000,
+            "title": "Vuelvo al Pueblo",
+            "plays": 200000,
             "year": 2025,
-            "spotify_url": "https://open.spotify.com/intl-es/album/0GvYb51pA6EU9ftcSMU1SR",
+            "spotify_url": "https://open.spotify.com/intl-es/track/1CrPXxbLIP4PabXzoxm8rN",
             "album": "Me Lleve a la Luna",
-            "image_url": "data/media/covers/me-lleve-a-la-luna-cover.jpg"
+            "image_url": "data/media/covers/pepito-grillo-ep-cover.png",
+            "duration": "3:18"
         },
         {
             "title": "Pepito Grillo",
+            "plays": 180000,
+            "year": 2025,
+            "spotify_url": "https://open.spotify.com/intl-es/track/1FUNqepb8iEnG910CaS2a6",
+            "album": "Me Lleve a la Luna",
+            "image_url": "data/media/covers/pepito-grillo-ep-cover.png",
+            "duration": "4:03",
+            "featured_artist": "Miguelichi López"
+        },
+        {
+            "title": "Tal Vez Fuimos",
+            "plays": 160000,
+            "year": 2025,
+            "spotify_url": "https://open.spotify.com/intl-es/track/7Ll3GuLyz5whShM8nL7MbL",
+            "album": "Me Lleve a la Luna",
+            "image_url": "data/media/covers/pepito-grillo-ep-cover.png",
+            "duration": "2:54"
+        },
+        {
+            "title": "Sigo Sin Dormir",
             "plays": 150000,
             "year": 2025,
-            "spotify_url": "https://open.spotify.com/intl-es/album/0GvYb51pA6EU9ftcSMU1SR",
+            "spotify_url": "https://open.spotify.com/intl-es/track/21BMN2tZ1cUG18dgaFgLnl",
             "album": "Me Lleve a la Luna",
-            "image_url": "data/media/covers/me-lleve-a-la-luna-cover.jpg"
+            "image_url": "data/media/covers/pepito-grillo-ep-cover.png",
+            "duration": "3:30"
+        },
+        {
+            "title": "No Me Olvido",
+            "plays": 140000,
+            "year": 2025,
+            "spotify_url": "https://open.spotify.com/intl-es/track/5mCTnACGQHUeYZYqOtKSAm",
+            "album": "Me Lleve a la Luna",
+            "image_url": "data/media/covers/pepito-grillo-ep-cover.png",
+            "duration": "2:55",
+            "featured_artist": "Muerdo"
         },
         {
             "title": "Díselo a la Vida",
@@ -78,7 +110,7 @@
             "year": 2025,
             "type": "EP",
             "spotify_url": "https://open.spotify.com/intl-es/album/0GvYb51pA6EU9ftcSMU1SR",
-            "image_url": "data/media/covers/pepito-grillo-ep-cover.jpg",
+            "image_url": "data/media/covers/pepito-grillo-ep-cover.png",
             "total_songs": 6,
             "duration": "19 min 48 sec"
         },
