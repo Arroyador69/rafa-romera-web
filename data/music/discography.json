@@ -9,7 +9,7 @@
     "popular_songs": [
         {
             "title": "Me Lleve a la Luna",
-            "plays": 250000,
+            "plays": 10000,
             "year": 2025,
             "spotify_url": "https://open.spotify.com/intl-es/track/0x3jIl43Ch2b2F9eflP6Oh",
             "album": "Me Lleve a la Luna",
@@ -18,7 +18,7 @@
         },
         {
             "title": "Vuelvo al Pueblo",
-            "plays": 200000,
+            "plays": 10000,
             "year": 2025,
             "spotify_url": "https://open.spotify.com/intl-es/track/1CrPXxbLIP4PabXzoxm8rN",
             "album": "Me Lleve a la Luna",
@@ -27,7 +27,7 @@
         },
         {
             "title": "Pepito Grillo",
-            "plays": 180000,
+            "plays": 10000,
             "year": 2025,
             "spotify_url": "https://open.spotify.com/intl-es/track/1FUNqepb8iEnG910CaS2a6",
             "album": "Me Lleve a la Luna",
@@ -37,7 +37,7 @@
         },
         {
             "title": "Tal Vez Fuimos",
-            "plays": 160000,
+            "plays": 10000,
             "year": 2025,
             "spotify_url": "https://open.spotify.com/intl-es/track/7Ll3GuLyz5whShM8nL7MbL",
             "album": "Me Lleve a la Luna",
@@ -46,7 +46,7 @@
         },
         {
             "title": "Sigo Sin Dormir",
-            "plays": 150000,
+            "plays": 10000,
             "year": 2025,
             "spotify_url": "https://open.spotify.com/intl-es/track/21BMN2tZ1cUG18dgaFgLnl",
             "album": "Me Lleve a la Luna",
@@ -55,7 +55,7 @@
         },
         {
             "title": "No Me Olvido",
-            "plays": 140000,
+            "plays": 10000,
             "year": 2025,
             "spotify_url": "https://open.spotify.com/intl-es/track/5mCTnACGQHUeYZYqOtKSAm",
             "album": "Me Lleve a la Luna",
@@ -65,7 +65,7 @@
         },
         {
             "title": "Díselo a la Vida",
-            "plays": 3299156,
+            "plays": 137550,
             "year": 2020,
             "spotify_url": "https://open.spotify.com/intl-es/track/3fuX1oR1uI85OLm62Sbhej",
             "album": "Díselo a la Vida",
@@ -79,16 +79,18 @@
             "spotify_url": "https://open.spotify.com/intl-es/track/0Roxgqo04t3AwYqmyy8P6x",
             "album": "Queremos Bailar",
             "image_url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0200eb2057ef75bb2422bc1664",
-            "duration": "3:28"
+            "duration": "3:28",
+            "featured_artist": "El Duende Callejero"
         },
         {
             "title": "Mala Costumbre",
-            "plays": 474353,
+            "plays": 10000,
             "year": 2023,
             "spotify_url": "https://open.spotify.com/intl-es/track/5LqAuIpDtgawmL1ZaIF0I1",
             "album": "Mala Costumbre",
             "image_url": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e021e1c761ad312d9518732375d",
-            "duration": "3:12"
+            "duration": "3:12",
+            "featured_artist": "El Duende Callejero"
         },
         {
             "title": "Color Esperanza",
@@ -97,7 +99,8 @@
             "spotify_url": "https://open.spotify.com/intl-es/track/5y2rzbhfR057zhu0e9dIGh",
             "album": "OT Gala 6 (Operación Triunfo 2020)",
             "image_url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e029656f60161603bc70cdeb970",
-            "duration": "3:55"
+            "duration": "3:55",
+            "featured_artist": "Operación Triunfo 2020"
         },
         {
             "title": "Alegría",
@@ -177,5 +180,13 @@
             "type": "Single",
             "spotify_url": "https://open.spotify.com/track/0"
         }
-    ]
+    ],
+    "last_updated": "2025-10-20 20:06:32",
+    "update_method": "lastfm_api_data",
+    "update_stats": {
+        "updated": 8,
+        "failed": 3,
+        "total": 11,
+        "lastfm_tracks_found": 39
+    }
 }
