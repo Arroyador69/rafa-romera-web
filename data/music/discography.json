@@ -8,6 +8,30 @@
     },
     "popular_songs": [
         {
+            "title": "Me Lleve a la Luna",
+            "plays": 250000,
+            "year": 2025,
+            "spotify_url": "https://open.spotify.com/intl-es/album/0GvYb51pA6EU9ftcSMU1SR",
+            "album": "Me Lleve a la Luna",
+            "image_url": "data/media/covers/me-lleve-a-la-luna-cover.jpg"
+        },
+        {
+            "title": "No Me Olvido",
+            "plays": 180000,
+            "year": 2025,
+            "spotify_url": "https://open.spotify.com/intl-es/album/0GvYb51pA6EU9ftcSMU1SR",
+            "album": "Me Lleve a la Luna",
+            "image_url": "data/media/covers/me-lleve-a-la-luna-cover.jpg"
+        },
+        {
+            "title": "Pepito Grillo",
+            "plays": 150000,
+            "year": 2025,
+            "spotify_url": "https://open.spotify.com/intl-es/album/0GvYb51pA6EU9ftcSMU1SR",
+            "album": "Me Lleve a la Luna",
+            "image_url": "data/media/covers/me-lleve-a-la-luna-cover.jpg"
+        },
+        {
             "title": "Díselo a la Vida",
             "plays": 3299156,
             "year": 2020,
@@ -49,6 +73,15 @@
         }
     ],
     "albums": [
+        {
+            "title": "Me Lleve a la Luna",
+            "year": 2025,
+            "type": "EP",
+            "spotify_url": "https://open.spotify.com/intl-es/album/0GvYb51pA6EU9ftcSMU1SR",
+            "image_url": "data/media/covers/me-lleve-a-la-luna-cover.jpg",
+            "total_songs": 6,
+            "duration": "19 min 48 sec"
+        },
         {
             "title": "Alegría",
             "year": 2025,

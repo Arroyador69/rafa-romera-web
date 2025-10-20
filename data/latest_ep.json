@@ -1,0 +1,48 @@
+{
+  "title": "Me Lleve a la Luna",
+  "artist": "Rafa Romera",
+  "year": "2025",
+  "type": "EP",
+  "total_songs": 6,
+  "duration": "19 min 48 sec",
+  "spotify_url": "https://open.spotify.com/intl-es/album/0GvYb51pA6EU9ftcSMU1SR",
+  "songs": [
+    {
+      "title": "Me Lleve a la Luna",
+      "artist": "Rafa Romera",
+      "duration": "3:15",
+      "track_number": 1
+    },
+    {
+      "title": "Vuelvo al Pueblo",
+      "artist": "Rafa Romera",
+      "duration": "3:22",
+      "track_number": 2
+    },
+    {
+      "title": "Pepito Grillo",
+      "artist": "Rafa Romera, Miguelichi López",
+      "duration": "3:18",
+      "track_number": 3
+    },
+    {
+      "title": "Tal Vez Fuimos",
+      "artist": "Rafa Romera",
+      "duration": "3:25",
+      "track_number": 4
+    },
+    {
+      "title": "Sigo Sin Dormir",
+      "artist": "Rafa Romera",
+      "duration": "3:12",
+      "track_number": 5
+    },
+    {
+      "title": "No Me Olvido",
+      "artist": "Rafa Romera, Muerdo",
+      "duration": "3:16",
+      "track_number": 6
+    }
+  ],
+  "last_updated": "2025-10-20T18:32:44.443338"
+}
