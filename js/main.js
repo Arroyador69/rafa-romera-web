@@ -105,36 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
-            // Actualizar carrusel de canciones en discografía
-            const songsTrack = document.querySelector('.songs-track');
-            if (songsTrack && data.popular_songs) {
-                songsTrack.innerHTML = '';
-                
-                // Duplicar las canciones para el efecto de carrusel infinito
-                const songs = [...data.popular_songs, ...data.popular_songs];
-                
-                songs.forEach((song, index) => {
-                    const songItem = document.createElement('div');
-                    songItem.className = 'song-item';
-                    songItem.innerHTML = `
-                        <div class="song-image">
-                            <img src="${song.image_url || 'data/media/photos/photo_10.jpg'}" alt="${song.title}">
-                        </div>
-                        <div class="song-info">
-                            <h4>${song.title}</h4>
-                            <p>${song.plays ? song.plays.toLocaleString() + ' reproducciones' : 'Single'}</p>
-                            <button class="play-button" onclick="window.open('${song.spotify_url || 'https://open.spotify.com/intl-es/artist/5L6WDyrviuO7HkNgMdDeCa'}', '_blank')">
-                                <i class="fas fa-play"></i>
-                                <span>Escuchar en Spotify</span>
-                            </button>
-                        </div>
-                    `;
-                    songsTrack.appendChild(songItem);
-                });
-                
-                // Agregar efecto de desvanecimiento dinámico
-                addFadeEffect();
-            }
+            // El carrusel de canciones ahora se maneja en songs-carousel.js
+            // Solo actualizar las estadísticas aquí
 
             // Actualizar discografía
             const albumsGrid = document.querySelector('.albums-grid');
