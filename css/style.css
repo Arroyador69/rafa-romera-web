@@ -56,6 +56,13 @@ body {
     width: auto;
     max-width: 200px;
     object-fit: contain;
+    filter: brightness(1.1);
+    transition: all 0.3s ease;
+}
+
+.logo-image:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
 }
 
 .nav-links {
