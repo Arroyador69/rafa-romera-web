@@ -107,11 +107,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Actualizar carrusel de canciones en discografía
             const songsTrack = document.querySelector('.songs-track');
+            console.log('🎵 Carrusel - songsTrack encontrado:', !!songsTrack);
+            console.log('🎵 Carrusel - popular_songs:', data.popular_songs?.length);
+            
             if (songsTrack && data.popular_songs) {
                 songsTrack.innerHTML = '';
                 
                 // Duplicar las canciones para el efecto de carrusel infinito
                 const songs = [...data.popular_songs, ...data.popular_songs];
+                console.log('🎵 Carrusel - Total canciones a mostrar:', songs.length);
                 
                 songs.forEach((song, index) => {
                     const songItem = document.createElement('div');
@@ -134,8 +138,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     songsTrack.appendChild(songItem);
                 });
                 
+                console.log('🎵 Carrusel - Elementos creados:', songsTrack.children.length);
+                
                 // Agregar efecto de desvanecimiento dinámico
                 addFadeEffect();
+            } else {
+                console.log('❌ Carrusel - No se pudo inicializar:', {
+                    songsTrack: !!songsTrack,
+                    popular_songs: !!data.popular_songs
+                });
             }
 
             // La discografía ahora está vacía - todas las canciones van en el carrusel
