@@ -29,19 +29,31 @@ jobs:
       run: |
         python3 update_stats.py
         
+    - name: Check for changes
+      id: verify-changed-files
+      run: |
+        if [ -n "$(git status --porcelain data/spotify_stats.json)" ]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+          echo "✅ Hay cambios en las estadísticas"
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+          echo "ℹ️ No hay cambios en las estadísticas"
+        fi
+        
     - name: Create Pull Request
+      if: steps.verify-changed-files.outputs.changed == 'true'
       uses: peter-evans/create-pull-request@v5
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "🤖 Auto-update Spotify statistics: $(date '+%Y-%m-%d %H:%M')"
-        title: "🤖 Auto-update Spotify statistics"
+        title: "🤖 Auto-update Spotify statistics - $(date '+%Y-%m-%d')"
         body: |
           Actualización automática de estadísticas de Spotify para Rafa Romera.
           
           - Oyentes mensuales actualizados
-          - Seguidores actualizados
+          - Seguidores actualizados  
           - Fecha: $(date '+%Y-%m-%d %H:%M')
           
           Esta actualización se realiza automáticamente cada día.
-        branch: auto-update-spotify-stats
+        branch: auto-update-spotify-stats-$(date +%Y%m%d)
         delete-branch: true
