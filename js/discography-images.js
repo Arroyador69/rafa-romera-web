@@ -27,14 +27,9 @@ function updateDiscographyImages(discography, coverInfo) {
     const discographySection = document.querySelector('.discography');
     
     if (discographySection) {
-        // Crear elementos de imagen para cada álbum EXCEPTO el EP "Me Lleve a la Luna"
-        discography.albums.forEach((album, index) => {
-            if (album.title !== "Me Lleve a la Luna") {
-                // Crear elemento de imagen para álbumes que no sean el EP
-                const albumElement = createAlbumElement(album, coverInfo);
-                discographySection.appendChild(albumElement);
-            }
-        });
+        // NO mostrar ningún álbum en la sección de discografía
+        // Todas las canciones van en el carrusel
+        console.log('✅ Sección de discografía vaciada - todas las canciones van en el carrusel');
     }
 }
 

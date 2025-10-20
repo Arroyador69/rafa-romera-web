@@ -108,26 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // El carrusel de canciones ahora se maneja en songs-carousel.js
             // Solo actualizar las estadísticas aquí
 
-            // Actualizar discografía
-            const albumsGrid = document.querySelector('.albums-grid');
-            if (albumsGrid && data.albums) {
-                albumsGrid.innerHTML = '';
-                data.albums.forEach(album => {
-                    const albumItem = document.createElement('div');
-                    albumItem.className = 'album-item';
-                    albumItem.innerHTML = `
-                        <img src="${album.image_url || 'data/media/photos/photo_10.jpg'}" alt="${album.title}" class="album-cover">
-                        <div class="album-info">
-                            <h4>${album.title}</h4>
-                            <p>${album.type} • ${album.year}</p>
-                        </div>
-                        <a href="https://open.spotify.com/intl-es/artist/5L6WDyrviuO7HkNgMdDeCa" target="_blank" class="album-link">
-                            <i class="fab fa-spotify"></i>
-                        </a>
-                    `;
-                    albumsGrid.appendChild(albumItem);
-                });
-            }
+            // La discografía ahora está vacía - todas las canciones van en el carrusel
+            // No generar contenido en la sección de discografía
 
             // Actualizar últimos lanzamientos
             const releasesGrid = document.querySelector('.releases-grid');
