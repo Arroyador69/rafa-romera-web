@@ -34,7 +34,7 @@ body {
     left: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9);
-    padding: 20px 0;
+    padding: 15px 0;
     z-index: 1000;
 }
 
@@ -52,9 +52,9 @@ body {
 }
 
 .logo-image {
-    height: 40px;
+    height: 80px;
     width: auto;
-    max-width: 200px;
+    max-width: 400px;
     object-fit: contain;
     filter: brightness(1.1);
     transition: all 0.3s ease;
@@ -1043,8 +1043,8 @@ h2 {
 
 @media (max-width: 480px) {
     .logo-image {
-        height: 30px;
-        max-width: 120px;
+        height: 60px;
+        max-width: 240px;
     }
     
     .lightbox-content {
@@ -1272,8 +1272,8 @@ h2 {
 /* Responsive */
 @media (max-width: 768px) {
     .logo-image {
-        height: 35px;
-        max-width: 150px;
+        height: 70px;
+        max-width: 300px;
     }
     
     .hamburger {
