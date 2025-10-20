@@ -186,16 +186,12 @@ function resumeSongsCarousel() {
 document.addEventListener('DOMContentLoaded', function() {
     const songsCarousel = document.querySelector('.songs-carousel');
     if (songsCarousel) {
+        // Solo pausar con hover, no con clic
         songsCarousel.addEventListener('mouseenter', pauseSongsCarousel);
         songsCarousel.addEventListener('mouseleave', resumeSongsCarousel);
         
-        // También pausar cuando se hace clic en un botón de play
-        songsCarousel.addEventListener('click', function(e) {
-            if (e.target.closest('.play-button')) {
-                pauseSongsCarousel();
-                setTimeout(resumeSongsCarousel, 5000); // Reanudar después de 5 segundos
-            }
-        });
+        // No pausar al hacer clic en botones de play
+        // El carrusel continúa girando siempre
     }
 });
 
