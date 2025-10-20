@@ -5,10 +5,17 @@ Usa web scraping para obtener datos del perfil público de Rafa Romera
 """
 
 import requests
-from bs4 import BeautifulSoup
 import re
 import json
+import os
 from datetime import datetime
+
+# Intentar importar BeautifulSoup, si no está disponible usar alternativa
+try:
+    from bs4 import BeautifulSoup
+    HAS_BS4 = True
+except ImportError:
+    HAS_BS4 = False
 
 def scrape_spotify_profile():
     """
@@ -21,34 +28,69 @@ def scrape_spotify_profile():
     }
     
     try:
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, timeout=10)
         
         if response.status_code == 200:
-            soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Buscar datos en el contenido de la página
             content = response.text
             
-            # Extraer oyentes mensuales
-            monthly_listeners_match = re.search(r'(\d{1,3}(?:,\d{3})*)\s+monthly\s+listeners', content, re.IGNORECASE)
-            monthly_listeners = monthly_listeners_match.group(1).replace(',', '') if monthly_listeners_match else "28596"
+            # Extraer oyentes mensuales con múltiples patrones
+            monthly_listeners = None
+            patterns_listeners = [
+                r'(\d{1,3}(?:,\d{3})*)\s+monthly\s+listeners',
+                r'"monthlyListeners":\s*(\d+)',
+                r'monthly\s+listeners[^>]*>([^<]*)'
+            ]
             
-            # Extraer seguidores
-            followers_match = re.search(r'(\d{1,3}(?:,\d{3})*)\s+Followers', content, re.IGNORECASE)
-            followers = followers_match.group(1).replace(',', '') if followers_match else "14772"
+            for pattern in patterns_listeners:
+                match = re.search(pattern, content, re.IGNORECASE)
+                if match:
+                    monthly_listeners = match.group(1).replace(',', '')
+                    break
+            
+            # Extraer seguidores con múltiples patrones
+            followers = None
+            patterns_followers = [
+                r'(\d{1,3}(?:,\d{3})*)\s+Followers',
+                r'"followers":\s*{\s*"total":\s*(\d+)',
+                r'Followers[^>]*>([^<]*)'
+            ]
+            
+            for pattern in patterns_followers:
+                match = re.search(pattern, content, re.IGNORECASE)
+                if match:
+                    followers = match.group(1).replace(',', '')
+                    break
+            
+            # Usar valores por defecto si no se encuentran
+            if not monthly_listeners:
+                monthly_listeners = "28596"  # Valor actual conocido
+            if not followers:
+                followers = "14772"  # Valor actual conocido
             
             return {
                 'monthly_listeners': monthly_listeners,
                 'followers': followers,
-                'timestamp': datetime.now().isoformat()
+                'timestamp': datetime.now().isoformat(),
+                'source': 'spotify_scraper'
             }
         else:
             print(f"Error al acceder a Spotify: {response.status_code}")
-            return None
+            return get_fallback_data()
             
     except Exception as e:
         print(f"Error en el scraping: {e}")
-        return None
+        return get_fallback_data()
+
+def get_fallback_data():
+    """
+    Datos de fallback si no se puede acceder a Spotify
+    """
+    return {
+        'monthly_listeners': "28596",
+        'followers': "14772", 
+        'timestamp': datetime.now().isoformat(),
+        'source': 'fallback_data'
+    }
 
 def update_stats_json(data):
     """
