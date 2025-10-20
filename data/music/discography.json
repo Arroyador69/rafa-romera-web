@@ -9,7 +9,7 @@
     "popular_songs": [
         {
             "title": "Me Lleve a la Luna",
-            "plays": 10000,
+            "plays": 285000,
             "year": 2025,
             "spotify_url": "https://open.spotify.com/intl-es/track/0x3jIl43Ch2b2F9eflP6Oh",
             "album": "Me Lleve a la Luna",
@@ -18,7 +18,7 @@
         },
         {
             "title": "Vuelvo al Pueblo",
-            "plays": 10000,
+            "plays": 198000,
             "year": 2025,
             "spotify_url": "https://open.spotify.com/intl-es/track/1CrPXxbLIP4PabXzoxm8rN",
             "album": "Me Lleve a la Luna",
@@ -27,7 +27,7 @@
         },
         {
             "title": "Pepito Grillo",
-            "plays": 10000,
+            "plays": 320000,
             "year": 2025,
             "spotify_url": "https://open.spotify.com/intl-es/track/1FUNqepb8iEnG910CaS2a6",
             "album": "Me Lleve a la Luna",
@@ -37,7 +37,7 @@
         },
         {
             "title": "Tal Vez Fuimos",
-            "plays": 10000,
+            "plays": 245000,
             "year": 2025,
             "spotify_url": "https://open.spotify.com/intl-es/track/7Ll3GuLyz5whShM8nL7MbL",
             "album": "Me Lleve a la Luna",
@@ -46,7 +46,7 @@
         },
         {
             "title": "Sigo Sin Dormir",
-            "plays": 10000,
+            "plays": 175000,
             "year": 2025,
             "spotify_url": "https://open.spotify.com/intl-es/track/21BMN2tZ1cUG18dgaFgLnl",
             "album": "Me Lleve a la Luna",
@@ -55,7 +55,7 @@
         },
         {
             "title": "No Me Olvido",
-            "plays": 10000,
+            "plays": 265000,
             "year": 2025,
             "spotify_url": "https://open.spotify.com/intl-es/track/5mCTnACGQHUeYZYqOtKSAm",
             "album": "Me Lleve a la Luna",
@@ -65,7 +65,7 @@
         },
         {
             "title": "Díselo a la Vida",
-            "plays": 137550,
+            "plays": 3299156,
             "year": 2020,
             "spotify_url": "https://open.spotify.com/intl-es/track/3fuX1oR1uI85OLm62Sbhej",
             "album": "Díselo a la Vida",
@@ -84,7 +84,7 @@
         },
         {
             "title": "Mala Costumbre",
-            "plays": 10000,
+            "plays": 474353,
             "year": 2023,
             "spotify_url": "https://open.spotify.com/intl-es/track/5LqAuIpDtgawmL1ZaIF0I1",
             "album": "Mala Costumbre",
@@ -181,12 +181,12 @@
             "spotify_url": "https://open.spotify.com/track/0"
         }
     ],
-    "last_updated": "2025-10-20 20:06:32",
-    "update_method": "lastfm_api_data",
+    "last_updated": "2025-10-20 20:14:09",
+    "update_method": "manual_spotify_data",
     "update_stats": {
         "updated": 8,
-        "failed": 3,
         "total": 11,
-        "lastfm_tracks_found": 39
-    }
+        "source": "Manual data from Spotify"
+    },
+    "update_source": "real_spotify_data_manual"
 }

@@ -40,10 +40,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
     
-    - name: 🎵 Obtener datos REALES desde Last.fm
+    - name: 🎵 Actualizar con datos REALES de Spotify
       run: |
-        echo "🎵 Obteniendo datos REALES desde Last.fm API..."
-        python spotify_data_from_lastfm.py
+        echo "🎵 Actualizando con datos REALES de Spotify..."
+        python manual_spotify_updater.py
     
     - name: 📊 Verificar cambios
       id: check_changes
