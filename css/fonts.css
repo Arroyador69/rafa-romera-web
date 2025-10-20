@@ -1,7 +1,7 @@
 /* Ultra Condensed Sans Serif Font Implementation */
 @font-face {
     font-family: 'Ultra Condensed Sans Serif';
-    src: url('../fonts/UltraCondensedSansSerif.ttf') format('truetype');
+    src: url('/fonts/UltraCondensedSansSerif.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
