@@ -53,13 +53,13 @@
 }
 
 .hero-title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'MD Tall', 'Barlow Condensed', 'Arial Black', sans-serif;
     font-size: 7rem;
     font-weight: 900;
     margin-bottom: 30px;
     color: white;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
-    letter-spacing: 12px;
+    letter-spacing: 8px;
     transition: opacity 0.3s ease;
     text-transform: uppercase;
     line-height: 0.8;
