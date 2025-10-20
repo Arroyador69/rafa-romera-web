@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Font - Ultra Condensed Sans Serif</title>
+    <style>
+        @font-face {
+            font-family: 'Ultra Condensed Sans Serif';
+            src: url('fonts/UltraCondensedSansSerif.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        body {
+            background: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+        
+        .test-title {
+            font-family: 'Ultra Condensed Sans Serif', Arial, sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            line-height: 0.8;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .comparison {
+            font-family: Arial, sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            line-height: 0.8;
+            margin: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test de Fuente Ultra Condensed Sans Serif</h1>
+    
+    <div class="test-title">RAFA ROMERA</div>
+    <p>↑ Con Ultra Condensed Sans Serif</p>
+    
+    <div class="comparison">RAFA ROMERA</div>
+    <p>↑ Con Arial (comparación)</p>
+    
+    <p>Si las dos líneas se ven diferentes, la fuente está funcionando correctamente.</p>
+</body>
+</html>
